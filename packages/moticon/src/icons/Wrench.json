@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "wrench",
+    "tighten",
+    "objects",
+    "tools"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "tighten",
+    "duration": 0.5,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

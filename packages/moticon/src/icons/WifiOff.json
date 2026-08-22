@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "wifi-off",
+    "cut",
+    "devices",
+    "tech"
+  ],
+  "categories": [
+    "Devices & Tech"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "cut",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

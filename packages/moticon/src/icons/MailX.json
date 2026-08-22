@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "mail-x",
+    "reject",
+    "communication"
+  ],
+  "categories": [
+    "Communication"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "reject",
+    "duration": 0.7,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

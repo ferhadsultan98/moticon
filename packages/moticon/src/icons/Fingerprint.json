@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "fingerprint",
+    "scan",
+    "interface",
+    "actions"
+  ],
+  "categories": [
+    "Interface & Actions"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "scan",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

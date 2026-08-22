@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "orbit",
+    "revolve",
+    "health",
+    "science"
+  ],
+  "categories": [
+    "Health & Science"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "revolve",
+    "duration": 0.7,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

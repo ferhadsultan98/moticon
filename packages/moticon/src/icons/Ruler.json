@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "ruler",
+    "mark",
+    "objects",
+    "tools"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "mark",
+    "duration": 0.2,
+    "ease": null,
+    "stiffness": null
+  }
+}

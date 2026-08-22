@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "phone-call",
+    "signal",
+    "communication"
+  ],
+  "categories": [
+    "Communication"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "signal",
+    "duration": 0.2,
+    "ease": null,
+    "stiffness": null
+  }
+}

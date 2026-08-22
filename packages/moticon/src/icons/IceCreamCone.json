@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "ice-cream-cone",
+    "drip",
+    "food",
+    "drink"
+  ],
+  "categories": [
+    "Food & Drink"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "drip",
+    "duration": 0.6,
+    "ease": "easeIn",
+    "stiffness": null
+  }
+}

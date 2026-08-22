@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bell-off",
+    "silence",
+    "communication"
+  ],
+  "categories": [
+    "Communication"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "silence",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

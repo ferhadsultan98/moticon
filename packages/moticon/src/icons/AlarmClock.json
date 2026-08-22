@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "alarm-clock",
+    "ring",
+    "time",
+    "calendar"
+  ],
+  "categories": [
+    "Time & Calendar"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "ring",
+    "duration": 0.4,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

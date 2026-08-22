@@ -1,0 +1,78 @@
+{
+  "name": "moticon",
+  "version": "0.1.0",
+  "description": "328 animated React icons, each modeling a real physical mechanic instead of a generic scale/opacity tween. Built on motion/react.",
+  "author": "Farhad Sultanov",
+  "license": "MIT",
+  "homepage": "https://github.com/ferhadsultan98/moticon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferhadsultan98/moticon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferhadsultan98/moticon/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/icons/*.json",
+    "icon.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "icons",
+    "icon-library",
+    "react",
+    "react-icons",
+    "animated-icons",
+    "animation",
+    "motion",
+    "framer-motion",
+    "motion-react",
+    "svg",
+    "svg-icons",
+    "lucide",
+    "lucide-icons",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "motion": ">=11",
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^19.2.4",
+    "esbuild": "^0.28.2",
+    "lucide-static": "^1.33.0",
+    "motion": "^11.11.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

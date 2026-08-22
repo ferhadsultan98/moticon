@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bell-plus",
+    "add",
+    "communication"
+  ],
+  "categories": [
+    "Communication"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "add",
+    "duration": 0.6,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

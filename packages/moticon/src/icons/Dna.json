@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "dna",
+    "twist",
+    "health",
+    "science"
+  ],
+  "categories": [
+    "Health & Science"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "twist",
+    "duration": 0.2,
+    "ease": null,
+    "stiffness": null
+  }
+}

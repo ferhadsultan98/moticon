@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "anchor",
+    "sway",
+    "objects",
+    "tools"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "sway",
+    "duration": 0.6,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

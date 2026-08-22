@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "plug",
+    "plugin",
+    "devices",
+    "tech"
+  ],
+  "categories": [
+    "Devices & Tech"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "plugin",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

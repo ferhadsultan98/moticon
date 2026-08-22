@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "utensils-crossed",
+    "clash",
+    "food",
+    "drink"
+  ],
+  "categories": [
+    "Food & Drink"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "clash",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

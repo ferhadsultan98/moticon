@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "signpost",
+    "creak",
+    "arrows",
+    "navigation"
+  ],
+  "categories": [
+    "Arrows & Navigation"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "creak",
+    "duration": 0.4,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

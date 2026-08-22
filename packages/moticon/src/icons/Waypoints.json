@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "waypoints",
+    "ping",
+    "arrows",
+    "navigation"
+  ],
+  "categories": [
+    "Arrows & Navigation"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "ping",
+    "duration": 0.25,
+    "ease": null,
+    "stiffness": null
+  }
+}

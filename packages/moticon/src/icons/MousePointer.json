@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "mouse-pointer",
+    "click",
+    "interface",
+    "actions"
+  ],
+  "categories": [
+    "Interface & Actions"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "click",
+    "duration": 0.15,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

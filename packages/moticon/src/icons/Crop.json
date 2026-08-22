@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "crop",
+    "frame",
+    "interface",
+    "actions"
+  ],
+  "categories": [
+    "Interface & Actions"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "frame",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

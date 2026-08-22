@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "credit-card",
+    "tap",
+    "commerce",
+    "finance"
+  ],
+  "categories": [
+    "Commerce & Finance"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "tap",
+    "duration": 0.9,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

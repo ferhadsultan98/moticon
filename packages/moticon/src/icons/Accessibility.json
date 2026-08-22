@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "accessibility",
+    "roll",
+    "people",
+    "body"
+  ],
+  "categories": [
+    "People & Body"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "roll",
+    "duration": 0.6,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

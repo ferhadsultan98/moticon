@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "scan-face",
+    "recognize",
+    "media",
+    "entertainment"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "recognize",
+    "duration": 0.7,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

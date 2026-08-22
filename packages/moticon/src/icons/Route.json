@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "route",
+    "travel",
+    "arrows",
+    "navigation"
+  ],
+  "categories": [
+    "Arrows & Navigation"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "travel",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "gauge",
+    "rev",
+    "charts",
+    "data"
+  ],
+  "categories": [
+    "Charts & Data"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "rev",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

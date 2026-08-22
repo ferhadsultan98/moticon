@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "calendar",
+    "flip",
+    "time"
+  ],
+  "categories": [
+    "Time & Calendar"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "flip",
+    "duration": 0.4,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "plus",
+    "pop",
+    "interface",
+    "actions"
+  ],
+  "categories": [
+    "Interface & Actions"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "pop",
+    "duration": 0.25,
+    "ease": "backOut",
+    "stiffness": null
+  }
+}

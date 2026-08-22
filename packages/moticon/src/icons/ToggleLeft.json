@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "toggle-left",
+    "switch",
+    "interface",
+    "actions"
+  ],
+  "categories": [
+    "Interface & Actions"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "switch",
+    "duration": 0.4,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

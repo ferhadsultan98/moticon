@@ -1,0 +1,18 @@
+{
+  "name": "moticon-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=moticon && npm run build --workspace=moticon-site",
+    "build:pkg": "npm run build --workspace=moticon",
+    "build:site": "npm run build --workspace=moticon-site",
+    "dev": "npm run dev --workspace=moticon-site",
+    "dev:pkg": "npm run dev --workspace=moticon",
+    "lint": "npm run lint --workspace=moticon-site",
+    "typecheck": "npm run typecheck --workspace=moticon"
+  }
+}

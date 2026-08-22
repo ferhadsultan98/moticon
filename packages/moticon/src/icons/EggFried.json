@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "egg-fried",
+    "sizzle",
+    "food",
+    "drink"
+  ],
+  "categories": [
+    "Food & Drink"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "sizzle",
+    "duration": 0.4,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

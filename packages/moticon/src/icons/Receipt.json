@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "receipt",
+    "total",
+    "commerce",
+    "finance"
+  ],
+  "categories": [
+    "Commerce & Finance"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "total",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

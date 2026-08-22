@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "milestone",
+    "reach",
+    "arrows",
+    "navigation"
+  ],
+  "categories": [
+    "Arrows & Navigation"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "reach",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

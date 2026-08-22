@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "microscope",
+    "adjust",
+    "health",
+    "science"
+  ],
+  "categories": [
+    "Health & Science"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "adjust",
+    "duration": 0.5,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

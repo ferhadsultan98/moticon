@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "clipboard-list",
+    "fill",
+    "files",
+    "documents"
+  ],
+  "categories": [
+    "Files & Documents"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "fill",
+    "duration": 0.2,
+    "ease": null,
+    "stiffness": null
+  }
+}

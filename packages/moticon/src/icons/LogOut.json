@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "log-out",
+    "exit",
+    "miscellaneous"
+  ],
+  "categories": [
+    "Miscellaneous"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "exit",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

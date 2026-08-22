@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "ticket",
+    "tear",
+    "files",
+    "documents"
+  ],
+  "categories": [
+    "Files & Documents"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "tear",
+    "duration": 0.2,
+    "ease": null,
+    "stiffness": null
+  }
+}

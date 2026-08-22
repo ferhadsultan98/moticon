@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "banknote",
+    "count",
+    "commerce",
+    "finance"
+  ],
+  "categories": [
+    "Commerce & Finance"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "count",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

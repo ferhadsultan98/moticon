@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "file",
+    "fold",
+    "files",
+    "documents"
+  ],
+  "categories": [
+    "Files & Documents"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "fold",
+    "duration": 0.45,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "moticon icon metadata",
+  "type": "object",
+  "required": ["contributors", "tags", "categories"],
+  "properties": {
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "deprecated": {
+      "type": "boolean"
+    },
+    "motion": {
+      "type": "object",
+      "properties": {
+        "trigger": { "enum": ["hover", "tap"] },
+        "mechanic": { "type": "string" },
+        "duration": { "type": ["number", "null"] },
+        "ease": { "type": ["string", "null"] },
+        "stiffness": { "type": ["number", "null"] }
+      }
+    }
+  }
+}

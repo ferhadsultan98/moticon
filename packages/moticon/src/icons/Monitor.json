@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "monitor",
+    "on",
+    "devices",
+    "tech"
+  ],
+  "categories": [
+    "Devices & Tech"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "on",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

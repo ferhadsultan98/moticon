@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "hammer",
+    "strike",
+    "objects",
+    "tools"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "strike",
+    "duration": 0.3,
+    "ease": "easeIn",
+    "stiffness": null
+  }
+}

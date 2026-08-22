@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "image",
+    "pan",
+    "media",
+    "entertainment"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "pan",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

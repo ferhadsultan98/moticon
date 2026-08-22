@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "hash",
+    "tag",
+    "charts",
+    "data"
+  ],
+  "categories": [
+    "Charts & Data"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "tag",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

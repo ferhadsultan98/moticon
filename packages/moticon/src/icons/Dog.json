@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "dog",
+    "perk",
+    "animals"
+  ],
+  "categories": [
+    "Animals"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "perk",
+    "duration": 0.3,
+    "ease": "backOut",
+    "stiffness": null
+  }
+}

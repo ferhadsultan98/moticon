@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "send-horizontal",
+    "fly",
+    "communication"
+  ],
+  "categories": [
+    "Communication"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "fly",
+    "duration": 0.6,
+    "ease": "easeIn",
+    "stiffness": null
+  }
+}

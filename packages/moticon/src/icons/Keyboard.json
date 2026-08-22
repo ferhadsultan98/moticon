@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "keyboard",
+    "type",
+    "devices",
+    "tech"
+  ],
+  "categories": [
+    "Devices & Tech"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "type",
+    "duration": 0.15,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

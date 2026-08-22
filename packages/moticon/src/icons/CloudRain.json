@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "cloud-rain",
+    "drip",
+    "weather",
+    "nature"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "drip",
+    "duration": 0.5,
+    "ease": "easeIn",
+    "stiffness": null
+  }
+}

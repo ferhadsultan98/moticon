@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "file-plus",
+    "add",
+    "files",
+    "documents"
+  ],
+  "categories": [
+    "Files & Documents"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "add",
+    "duration": 0.3,
+    "ease": "backOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "scan-line",
+    "scan",
+    "media",
+    "entertainment"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "scan",
+    "duration": 1.2,
+    "ease": "linear",
+    "stiffness": null
+  }
+}

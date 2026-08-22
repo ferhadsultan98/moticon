@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "cherry",
+    "bounce",
+    "food",
+    "drink"
+  ],
+  "categories": [
+    "Food & Drink"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "bounce",
+    "duration": 0.45,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

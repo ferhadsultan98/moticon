@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "trending-down",
+    "drop",
+    "charts",
+    "data"
+  ],
+  "categories": [
+    "Charts & Data"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "drop",
+    "duration": 0.45,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

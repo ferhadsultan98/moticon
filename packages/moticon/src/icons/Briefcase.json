@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "briefcase",
+    "unlatch",
+    "objects",
+    "tools"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "unlatch",
+    "duration": 0.3,
+    "ease": "backOut",
+    "stiffness": null
+  }
+}

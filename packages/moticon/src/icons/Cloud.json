@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "cloud",
+    "drift",
+    "weather",
+    "nature"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "drift",
+    "duration": 1,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

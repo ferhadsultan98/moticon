@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "file-minus",
+    "remove",
+    "files",
+    "documents"
+  ],
+  "categories": [
+    "Files & Documents"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "remove",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

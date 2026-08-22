@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "expand",
+    "grow",
+    "arrows",
+    "navigation"
+  ],
+  "categories": [
+    "Arrows & Navigation"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "grow",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

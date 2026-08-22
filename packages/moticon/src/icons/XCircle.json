@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "xcircle",
+    "reject",
+    "status",
+    "alerts"
+  ],
+  "categories": [
+    "Status & Alerts"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "reject",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

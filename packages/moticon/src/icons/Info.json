@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "info",
+    "tilt",
+    "status",
+    "alerts"
+  ],
+  "categories": [
+    "Status & Alerts"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "tilt",
+    "duration": 0.35,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

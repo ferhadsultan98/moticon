@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "sunset",
+    "set",
+    "weather",
+    "nature"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "set",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

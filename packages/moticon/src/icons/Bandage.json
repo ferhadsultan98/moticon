@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bandage",
+    "peel",
+    "health",
+    "science"
+  ],
+  "categories": [
+    "Health & Science"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "peel",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

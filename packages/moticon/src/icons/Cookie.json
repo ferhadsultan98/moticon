@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "cookie",
+    "crunch",
+    "food",
+    "drink"
+  ],
+  "categories": [
+    "Food & Drink"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "crunch",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

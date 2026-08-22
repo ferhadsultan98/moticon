@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "share",
+    "spread",
+    "miscellaneous"
+  ],
+  "categories": [
+    "Miscellaneous"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "spread",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

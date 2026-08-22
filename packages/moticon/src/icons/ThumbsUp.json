@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "thumbs-up",
+    "cheer",
+    "people",
+    "body"
+  ],
+  "categories": [
+    "People & Body"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "cheer",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "moticon-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/build-icon-metadata.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/build-icon-metadata.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "generate:metadata": "node scripts/build-icon-metadata.mjs"
+  },
+  "dependencies": {
+    "cmdk": "^1.1.1",
+    "moticon": "*",
+    "motion": "11.18.2",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

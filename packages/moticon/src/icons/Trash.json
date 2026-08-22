@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "trash",
+    "open",
+    "status",
+    "alerts"
+  ],
+  "categories": [
+    "Status & Alerts"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "open",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

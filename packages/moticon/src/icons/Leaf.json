@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "leaf",
+    "grow",
+    "weather",
+    "nature"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "grow",
+    "duration": 0.5,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

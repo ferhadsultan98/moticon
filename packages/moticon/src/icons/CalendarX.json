@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "calendar-x",
+    "cancel",
+    "time",
+    "calendar"
+  ],
+  "categories": [
+    "Time & Calendar"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "cancel",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

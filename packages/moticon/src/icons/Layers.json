@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "layers",
+    "expand",
+    "miscellaneous"
+  ],
+  "categories": [
+    "Miscellaneous"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "expand",
+    "duration": 0.25,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

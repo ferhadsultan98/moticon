@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "trending-up",
+    "climb",
+    "charts",
+    "data"
+  ],
+  "categories": [
+    "Charts & Data"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "climb",
+    "duration": 0.45,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "mountain-snow",
+    "drift",
+    "weather",
+    "nature"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "drift",
+    "duration": 0.7,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

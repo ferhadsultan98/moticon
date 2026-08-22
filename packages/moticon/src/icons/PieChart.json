@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "pie-chart",
+    "pull",
+    "charts",
+    "data"
+  ],
+  "categories": [
+    "Charts & Data"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "pull",
+    "duration": 0.3,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "alert-circle",
+    "alert",
+    "status",
+    "alerts"
+  ],
+  "categories": [
+    "Status & Alerts"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "alert",
+    "duration": 0.35,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "paw-print",
+    "press",
+    "animals"
+  ],
+  "categories": [
+    "Animals"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "press",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

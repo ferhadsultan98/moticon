@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "infinity-icon",
+    "flow",
+    "miscellaneous"
+  ],
+  "categories": [
+    "Miscellaneous"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "flow",
+    "duration": 0.8,
+    "ease": "linear",
+    "stiffness": null
+  }
+}

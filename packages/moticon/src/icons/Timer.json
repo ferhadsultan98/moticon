@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "timer",
+    "start",
+    "time",
+    "calendar"
+  ],
+  "categories": [
+    "Time & Calendar"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "start",
+    "duration": 0.5,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bug",
+    "scurry",
+    "animals"
+  ],
+  "categories": [
+    "Animals"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "scurry",
+    "duration": 0.35,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

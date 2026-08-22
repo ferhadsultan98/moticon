@@ -1,0 +1,24 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "thumbs-down",
+    "drop",
+    "people",
+    "body"
+  ],
+  "categories": [
+    "People & Body"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "tap",
+    "mechanic": "drop",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}
