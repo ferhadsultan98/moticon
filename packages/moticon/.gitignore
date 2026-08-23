@@ -3,3 +3,9 @@ dist
 *.log
 .DS_Store
 .claude
+
+# generated from src/icons/*.json by scripts/build-registry.mjs
+src/registry.ts
+
+# generated from src/icons/*.tsx by scripts/generate-exports.mjs
+src/index.ts

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { SearchCommand } from "@/components/SearchCommand";
+import { fetchStars } from "@/lib/github/stars";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,7 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const stars = await fetchStars();
   return (
     <html
       lang="en"
@@ -56,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Header />
+        <Header stars={stars} />
         <SearchCommand />
         <div
           aria-hidden="true"

@@ -6,9 +6,13 @@ import { AnimatePresence, motion } from "motion/react";
 import { Bell, Code, Menu, Search, Star, X } from "moticon";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SEARCH_EVENT } from "@/components/SearchCommand";
+import { formatStars } from "@/lib/github/format-stars";
 
-export function Header() {
+const REPO_URL = "https://github.com/ferhadsultan98/moticon";
+
+export function Header({ stars }: { stars: number | null }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const starsLabel = stars !== null ? formatStars(stars) : null;
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -76,17 +80,25 @@ export function Header() {
             </kbd>
           </button>
           <a
-            href="https://github.com"
+            href={REPO_URL}
             target="_blank"
             rel="noreferrer"
-            aria-label="moticon on GitHub, 1.2 thousand stars"
+            aria-label={
+              starsLabel
+                ? `moticon on GitHub, ${starsLabel} stars`
+                : "moticon on GitHub"
+            }
             className="hidden items-center gap-1.5 rounded-lg border border-border bg-surface px-2.5 py-1.5 font-mono text-[10px] text-muted transition-colors hover:border-border-strong hover:text-foreground lg:flex"
           >
             <Code size={14} />
             <span>GitHub</span>
-            <span className="mx-0.5 h-3 w-px bg-border-strong" />
-            <Star size={12} />
-            <span>1.2k</span>
+            {starsLabel && (
+              <>
+                <span className="mx-0.5 h-3 w-px bg-border-strong" />
+                <Star size={12} />
+                <span>{starsLabel}</span>
+              </>
+            )}
           </a>
 
           <ThemeToggle />
@@ -183,12 +195,12 @@ export function Header() {
               Changelog
             </Link>
             <a
-              href="https://github.com"
+              href={REPO_URL}
               target="_blank"
               rel="noreferrer"
               className="rounded-md px-3 py-2.5 text-muted transition-colors hover:bg-surface hover:text-foreground"
             >
-              GitHub
+              GitHub{starsLabel ? ` · ${starsLabel} stars` : ""}
             </a>
             </motion.nav>
           </motion.div>

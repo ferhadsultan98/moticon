@@ -22,11 +22,17 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./registry": {
+      "types": "./dist/registry.d.ts",
+      "import": "./dist/registry.js",
+      "require": "./dist/registry.cjs"
+    },
     "./package.json": "./package.json"
   },
   "files": [
     "dist",
     "src/icons/*.json",
+    "src/icons/*.tsx",
     "icon.schema.json",
     "README.md",
     "LICENSE"
@@ -36,10 +42,16 @@
     "node": ">=18"
   },
   "scripts": {
+    "generate:exports": "node scripts/generate-exports.mjs",
+    "fix:use-client": "node scripts/inject-use-client.mjs",
+    "build:registry": "node scripts/build-registry.mjs",
+    "prebuild": "npm run generate:exports && npm run build:registry",
     "build": "tsup",
+    "predev": "npm run generate:exports && npm run build:registry",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run typecheck && npm run build"
+    "size": "size-limit",
+    "prepublishOnly": "npm run typecheck && npm run build && npm run size"
   },
   "keywords": [
     "icons",
@@ -62,6 +74,7 @@
     "react": ">=18"
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^13.0.3",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^19.2.4",
     "esbuild": "^0.28.2",
@@ -69,9 +82,30 @@
     "motion": "^11.11.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.1",
+    "size-limit": "^13.0.3",
     "tsup": "^8.3.0",
     "typescript": "^5.6.0"
   },
+  "size-limit": [
+    {
+      "name": "full bundle (all 328 icons)",
+      "path": "dist/index.js",
+      "limit": "600 kB",
+      "ignore": ["react", "react-dom", "motion"]
+    },
+    {
+      "name": "single icon (tree-shaken)",
+      "path": "dist/index.js",
+      "import": "{ Bell }",
+      "limit": "10 kB",
+      "ignore": ["react", "react-dom", "motion"]
+    },
+    {
+      "name": "registry only",
+      "path": "dist/registry.js",
+      "limit": "150 kB"
+    }
+  ],
   "publishConfig": {
     "access": "public"
   }

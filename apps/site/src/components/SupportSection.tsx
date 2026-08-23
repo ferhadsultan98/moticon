@@ -1,4 +1,7 @@
 import { Code, Coffee, Heart, Star } from "moticon";
+import { formatStars } from "@/lib/github/format-stars";
+
+const REPO_URL = "https://github.com/ferhadsultan98/moticon";
 
 const supportOptions = [
   {
@@ -21,7 +24,8 @@ const supportOptions = [
   },
 ];
 
-export function SupportSection() {
+export function SupportSection({ stars }: { stars: number | null }) {
+  const starsLabel = stars !== null ? formatStars(stars) : null;
   return (
     <section className="border-b border-border">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
@@ -35,14 +39,18 @@ export function SupportSection() {
             </h2>
           </div>
           <a
-            href="https://github.com"
+            href={REPO_URL}
             target="_blank"
             rel="noreferrer"
             className="flex w-fit items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 font-mono text-xs text-muted transition-colors hover:border-border-strong hover:text-foreground"
           >
             <Code size={15} /> GitHub
-            <span className="h-3 w-px bg-border-strong" />
-            <Star size={13} /> 1.2k
+            {starsLabel && (
+              <>
+                <span className="h-3 w-px bg-border-strong" />
+                <Star size={13} /> {starsLabel}
+              </>
+            )}
           </a>
         </div>
 

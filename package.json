@@ -7,8 +7,9 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace=moticon && npm run build --workspace=moticon-site",
+    "build": "npm run build --workspace=moticon && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
     "build:pkg": "npm run build --workspace=moticon",
+    "build:mcp": "npm run build --workspace=@moticon/mcp",
     "build:site": "npm run build --workspace=moticon-site",
     "dev": "npm run dev --workspace=moticon-site",
     "dev:pkg": "npm run dev --workspace=moticon",

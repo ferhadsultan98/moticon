@@ -37,11 +37,9 @@ interface MoticonIconProps {
 
 ## Next.js
 
-Icons are interactive client components (they use `motion/react` internally). Add the client boundary to whatever component renders them:
+Every icon already ships with its own `"use client"` directive, so they work as-is inside Next.js App Router server components — no extra client boundary needed:
 
 ```tsx
-"use client";
-
 import { Bell } from "moticon";
 
 export function Notification() {
@@ -75,9 +73,28 @@ Each icon has a matching JSON file in `src/icons/` (e.g. `Bell.tsx` + `Bell.json
 
 ```bash
 npm install
-npm run build   # bundles src/index.ts with tsup
-npm run dev     # watch mode
+npm run build   # regenerates src/index.ts + src/registry.ts, then bundles with tsup
+npm run dev     # same, then watches for changes
 ```
+
+`src/index.ts` (the component barrel) and `src/registry.ts` (the metadata
+registry) are both generated, not hand-maintained — running `build` or `dev`
+regenerates them from `src/icons/*.tsx` and `src/icons/*.json` first. Adding
+a new icon means adding both files; the generator fails the build if:
+
+- either file is missing its counterpart
+- a `.json` is missing a required field from `icon.schema.json`
+- an icon name isn't PascalCase
+- a `.tsx` is missing its leading `"use client";` directive (every icon uses
+  `motion/react`, so a missing directive silently breaks any consumer
+  importing the package into a React Server Component)
+
+Run `npm run fix:use-client` after adding new icon files to patch in the
+missing directive automatically — it only touches files that need it.
+
+`npm run size` checks bundle size against budgets (full bundle, a single
+tree-shaken icon, and the registry) via [size-limit](https://github.com/ai/size-limit).
+It runs automatically before every `npm publish`.
 
 Icons are generated from [Lucide](https://lucide.dev) SVG paths via `scripts/generate-icons.mjs`, then hand-edited to add real per-icon motion.
 

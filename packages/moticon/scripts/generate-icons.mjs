@@ -146,7 +146,9 @@ function buildComponent(componentName, tags, presetConf) {
   if (presetConf.wrap === "path") {
     const [first, ...rest] = tags;
     const restJsx = rest.map((t) => `        <${t.tag} ${attrsToJsx(t.attrs)} />`).join("\n");
-    return `import { motion } from "motion/react";
+    return `"use client";
+
+import { motion } from "motion/react";
 import type { MoticonIconProps } from "./types";
 
 export function ${componentName}({
@@ -183,7 +185,9 @@ ${restJsx}
 `;
   }
 
-  return `import { motion } from "motion/react";
+  return `"use client";
+
+import { motion } from "motion/react";
 import type { MoticonIconProps } from "./types";
 
 export function ${componentName}({

@@ -1,0 +1,56 @@
+{
+  "name": "@moticon/mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for the moticon icon library — lets AI coding agents search the catalog and drop animated React icons straight into a project.",
+  "license": "MIT",
+  "author": "Farhad Sultanov",
+  "homepage": "https://github.com/ferhadsultan98/moticon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferhadsultan98/moticon.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/ferhadsultan98/moticon/issues"
+  },
+  "type": "module",
+  "bin": {
+    "moticon-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "moticon",
+    "icons",
+    "ai-agent",
+    "claude-code",
+    "cursor"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "moticon": "*",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

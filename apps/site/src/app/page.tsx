@@ -7,8 +7,10 @@ import { Footer } from "@/components/Footer";
 import { PlaygroundPreview } from "@/components/PlaygroundPreview";
 import { IconMarquee } from "@/components/IconMarquee";
 import { SupportSection } from "@/components/SupportSection";
+import { fetchStars } from "@/lib/github/stars";
 
-export default function Home() {
+export default async function Home() {
+  const stars = await fetchStars();
   return (
     <>
       <Hero />
@@ -18,7 +20,7 @@ export default function Home() {
       <GridPreview />
       <Features />
       <ShipIt />
-      <SupportSection />
+      <SupportSection stars={stars} />
       <Footer />
     </>
   );
