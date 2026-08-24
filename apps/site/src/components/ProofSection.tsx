@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 
 function GenericBell() {
   return (

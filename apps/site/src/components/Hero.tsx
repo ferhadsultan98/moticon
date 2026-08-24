@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 
 export function Hero() {
   const [copied, setCopied] = useState(false);

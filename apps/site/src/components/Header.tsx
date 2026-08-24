@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Bell, Code, Menu, Search, Star, X } from "moticon";
+import { Bell, Code, Menu, Search, Star, X } from "@moticon/react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SEARCH_EVENT } from "@/components/SearchCommand";
 import { formatStars } from "@/lib/github/format-stars";

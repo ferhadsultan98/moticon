@@ -33,10 +33,10 @@ claude mcp add moticon -- npx -y @moticon/mcp
 ## Requirements
 
 Icons returned by this server depend on the `motion` package. After adding an icon
-to your project with `add_icon`, make sure `moticon` and `motion` are installed:
+to your project with `add_icon`, make sure `@moticon/react` and `motion` are installed:
 
 ```bash
-npm install moticon motion
+npm install @moticon/react motion
 ```
 
 ## Development

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { iconComponents, type IconMeta } from "@/lib/icons";
-import { Check, Copy } from "moticon";
+import { Check, Copy } from "@moticon/react";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
 
 export function IconCell({ meta }: { meta: IconMeta }) {
@@ -15,7 +15,7 @@ export function IconCell({ meta }: { meta: IconMeta }) {
 
   function copyCode() {
     navigator.clipboard.writeText(
-      `import { ${meta.name} } from "moticon";\n\n<${meta.name} size={24} />`
+      `import { ${meta.name} } from "@moticon/react";\n\n<${meta.name} size={24} />`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 1200);

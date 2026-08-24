@@ -9,7 +9,7 @@ import {
   Search,
   ShoppingCart,
   Sparkles,
-} from "moticon";
+} from "@moticon/react";
 
 export function ExampleGallery() {
   return (

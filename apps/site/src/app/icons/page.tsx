@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { iconMeta } from "@/lib/icons";
 import { IconCell } from "@/components/IconCell";
 import { Footer } from "@/components/Footer";
-import { Search } from "moticon";
+import { Search } from "@moticon/react";
 import { SelectMenu } from "@/components/SelectMenu";
 import { Breadcrumb } from "@/components/Breadcrumb";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, ChevronDown } from "moticon";
+import { Check, ChevronDown } from "@moticon/react";
 
 export interface SelectOption {
   value: string;

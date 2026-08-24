@@ -1,6 +1,6 @@
 import { CodeBlock } from "@/components/CodeBlock";
 import { Footer } from "@/components/Footer";
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
@@ -9,7 +9,7 @@ pnpm add moticon
 yarn add moticon
 bun add moticon`;
 
-const usageCode = `import { Bell } from "moticon";
+const usageCode = `import { Bell } from "@moticon/react";
 
 export function Notification() {
   return <Bell size={24} />;
@@ -36,7 +36,7 @@ const accessibleCode = `<button aria-label="Open notifications">
 const nextCode = `// app/components/notification.tsx
 "use client";
 
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 
 export function Notification() {
   return <Bell size={24} />;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect } from "react";
-import { Moon, Sun } from "moticon";
+import { Moon, Sun } from "@moticon/react";
 
 const THEME_KEY = "moticon-theme";
 

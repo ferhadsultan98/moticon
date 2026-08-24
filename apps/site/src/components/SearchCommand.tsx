@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
-import { CornerDownRight, Search } from "moticon";
+import { CornerDownRight, Search } from "@moticon/react";
 import { iconComponents, iconMeta } from "@/lib/icons";
 
 export const SEARCH_EVENT = "moticon:open-search";

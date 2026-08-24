@@ -7,13 +7,13 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace=moticon && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
-    "build:pkg": "npm run build --workspace=moticon",
+    "build": "npm run build --workspace=@moticon/react && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
+    "build:pkg": "npm run build --workspace=@moticon/react",
     "build:mcp": "npm run build --workspace=@moticon/mcp",
     "build:site": "npm run build --workspace=moticon-site",
     "dev": "npm run dev --workspace=moticon-site",
-    "dev:pkg": "npm run dev --workspace=moticon",
+    "dev:pkg": "npm run dev --workspace=@moticon/react",
     "lint": "npm run lint --workspace=moticon-site",
-    "typecheck": "npm run typecheck --workspace=moticon"
+    "typecheck": "npm run typecheck --workspace=@moticon/react"
   }
 }

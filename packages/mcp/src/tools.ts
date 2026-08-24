@@ -1,14 +1,14 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { iconRegistry, type MoticonIconMeta } from "moticon/registry";
+import { iconRegistry, type MoticonIconMeta } from "@moticon/react/registry";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// moticon's own package root — resolved relative to this file so it works
-// whether this package is linked in a monorepo or installed from npm.
+// @moticon/react's own package root — resolved relative to this file so it
+// works whether this package is linked in a monorepo or installed from npm.
 const moticonPkgRoot = dirname(
-  fileURLToPath(import.meta.resolve("moticon/package.json"))
+  fileURLToPath(import.meta.resolve("@moticon/react/package.json"))
 );
 const iconsSourceDir = join(moticonPkgRoot, "src", "icons");
 
@@ -76,5 +76,5 @@ export function getIconSource(name: string): string | null {
 }
 
 export function importSnippet(name: string): string {
-  return `import { ${name} } from "moticon";\n\n<${name} size={24} />`;
+  return `import { ${name} } from "@moticon/react";\n\n<${name} size={24} />`;
 }

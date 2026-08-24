@@ -1,78 +1,158 @@
-# moticon (monorepo)
+<p align="center">
+  <img src="github-readme.png" alt="moticon — 328 icons that move with intent" width="100%" />
+</p>
 
-npm workspaces monorepo for the moticon icon library, its MCP server, and its showcase site.
+<h1 align="center">moticon</h1>
 
-```
-packages/moticon    the published npm package — 328 animated icon components,
-                     each with a matching per-icon JSON metadata file
-                     (src/icons/Bell.tsx + src/icons/Bell.json)
+<p align="center">
+  328 animated React icons, each modeling a real physical mechanic —
+  <br />
+  swing, drip, unfurl, snap — instead of a generic scale/opacity tween.
+</p>
 
-packages/mcp         @moticon/mcp — a Model Context Protocol server that lets AI
-                     coding agents (Claude Code, Cursor, etc.) search the icon
-                     catalog and drop icons straight into a project
+<p align="center">
+  <a href="https://www.npmjs.com/package/@moticon/react"><img src="https://img.shields.io/npm/v/@moticon/react?color=3dff9e&label=%40moticon%2Freact" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/@moticon/mcp"><img src="https://img.shields.io/npm/v/@moticon/mcp?color=3dff9e&label=%40moticon%2Fmcp" alt="npm version" /></a>
+  <a href="https://github.com/ferhadsultan98/moticon/blob/main/packages/moticon/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3dff9e" alt="MIT License" /></a>
+  <a href="https://github.com/ferhadsultan98/moticon"><img src="https://img.shields.io/github/stars/ferhadsultan98/moticon?color=3dff9e" alt="GitHub stars" /></a>
+</p>
 
-apps/site            Next.js showcase site — imports both the icon components
-                     AND the metadata registry directly from the "moticon"
-                     package (via workspace symlink). No local copy of either.
-```
+<p align="center">
+  <a href="#install">Install</a> ·
+  <a href="#usage">Usage</a> ·
+  <a href="#mcp-server">MCP server</a> ·
+  <a href="#repo-layout">Repo layout</a> ·
+  <a href="#contributing">Contributing</a>
+</p>
 
-## Single source of truth: the package, not the site
+---
 
-Metadata (category, tags, aliases, contributors, motion spec) lives **only** as
-per-icon JSON files in `packages/moticon/src/icons/<Name>.json`. Nothing else
-should be hand-edited.
+## Why moticon
 
-`packages/moticon`'s own `prebuild`/`predev` runs two generators against
-`src/icons/*.tsx` + `src/icons/*.json` before every build:
+Most icon animation libraries apply the same scale/fade/rotate tween to every
+icon regardless of what it actually depicts. moticon doesn't — every icon's
+motion is hand-built to match how the real object behaves:
 
-- `scripts/generate-exports.mjs` — writes `src/index.ts` (the component
-  barrel), and fails the build if any `.tsx` is missing its `.json` (or
-  vice versa), or if a `.json` is missing a field required by
-  `icon.schema.json`.
-- `scripts/build-registry.mjs` — writes `src/registry.ts` (the metadata
-  array), built as its own **`moticon/registry`** entry point, kept separate
-  from the icon components on purpose because the components carry a
-  `"use client"` directive and the registry must stay safely importable
-  from React Server Components.
+- 🔔 a bell **rings**
+- ❤️ a heart **beats**
+- ⭐ a star **sparkles**
+- 📥 an inbox **receives**
+- 🔋 a battery **charges**
 
-Both `src/index.ts` and `src/registry.ts` are gitignored — always generated,
-never hand-edited. So **anyone who installs `moticon` from npm**, not just
-this site, gets the full metadata alongside the components:
+328 icons, each with its own motion spec. Built on
+[motion](https://motion.dev) (Framer Motion), fully typed, tree-shakeable,
+zero runtime CSS.
 
-```ts
-import { Bell } from "moticon";
-import { iconRegistry } from "moticon/registry";
-```
-
-`apps/site/src/lib/icons.ts` simply re-exports `iconRegistry` — it does not
-generate or duplicate anything itself. `packages/mcp` reads from the same
-`moticon/registry` entry point and from `packages/moticon/src/icons/*.tsx`
-directly (for `get_icon`/`add_icon` source code) — so all three consumers
-(package, MCP server, site) read from one place.
-
-Add or edit an icon's category/tags/motion spec in `packages/moticon/src/icons/<Name>.json`
-— rebuild the package and every consumer picks it up.
-
-## Commands (run from repo root)
+## Install
 
 ```bash
-npm install          # installs and links every workspace
+npm install @moticon/react motion
+```
 
-npm run dev           # start the site (regenerates metadata first)
-npm run dev:pkg       # watch-build the moticon package (tsup --watch)
+`motion` is a peer dependency.
 
-npm run build         # build the package, the MCP server, then the site
-npm run build:pkg     # build only packages/moticon (tsup)
-npm run build:mcp     # build only packages/mcp (tsup)
-npm run build:site    # build only apps/site (next build)
+## Usage
 
-npm run typecheck     # typecheck packages/moticon
-npm run lint          # lint apps/site
+```tsx
+import { Bell } from "@moticon/react";
+
+export function Notification() {
+  return <Bell size={24} />;
+}
+```
+
+Every icon ships its own `"use client"` directive, so it works as-is inside
+Next.js App Router server components — no extra client boundary needed.
+
+Each icon also carries structured metadata — category, tags, aliases, and its
+animation spec — importable separately so it stays safe in server components:
+
+```ts
+import { iconRegistry } from "@moticon/react/registry";
+
+iconRegistry.find((icon) => icon.name === "Bell");
+// { name: "Bell", category: "Communication", mechanic: "ring", trigger: "hover", ... }
+```
+
+## MCP server
+
+[`@moticon/mcp`](packages/mcp) lets AI coding agents — Claude Code, Cursor,
+and anything else that speaks [MCP](https://modelcontextprotocol.io) — search
+the icon catalog and drop icons straight into your project.
+
+```bash
+claude mcp add moticon -- npx -y @moticon/mcp
+```
+
+Four tools: `search_icons`, `get_icon`, `add_icon`, `list_libraries`. See
+[`packages/mcp/README.md`](packages/mcp/README.md) for manual setup (Cursor,
+or any other MCP client).
+
+## Repo layout
+
+This is an npm workspaces monorepo — one source of truth, three consumers.
+
+```
+packages/moticon    @moticon/react on npm. 328 icon components, each paired
+                     with a per-icon JSON metadata file
+                     (src/icons/Bell.tsx + src/icons/Bell.json)
+
+packages/mcp         @moticon/mcp on npm. The MCP server above.
+
+apps/site            The showcase site. Imports icons AND metadata directly
+                     from @moticon/react — no local copy.
+```
+
+### Single source of truth
+
+Metadata (category, tags, aliases, contributors, motion spec) lives **only**
+in `packages/moticon/src/icons/<Name>.json`. Nothing else should be
+hand-edited — `src/index.ts` (the component barrel) and `src/registry.ts`
+(the metadata array, exported as its own `@moticon/react/registry` entry
+point) are both generated from it on every build, and the build **fails**
+if:
+
+- a `.tsx` is missing its matching `.json`, or vice versa
+- a `.json` is missing a field required by `icon.schema.json`
+- an icon name isn't PascalCase
+- a `.tsx` is missing its leading `"use client";` directive
+
+`apps/site` and `packages/mcp` both read straight from `@moticon/react` and
+`@moticon/react/registry` — nothing is duplicated or hand-synced between
+them.
+
+### Commands (run from repo root)
+
+```bash
+npm install            # installs and links every workspace
+
+npm run dev             # start the site (regenerates metadata first)
+npm run dev:pkg         # watch-build @moticon/react (tsup --watch)
+
+npm run build           # build the package, the MCP server, then the site
+npm run build:pkg       # build only packages/moticon
+npm run build:mcp       # build only packages/mcp
+npm run build:site      # build only apps/site
+
+npm run typecheck       # typecheck packages/moticon
+npm run lint            # lint apps/site
 ```
 
 When actively developing icons, run `npm run dev:pkg` in one terminal and
-`npm run dev` in another — the site imports the package's build output, so
-the package needs to be built (or watching) for changes to show up.
+`npm run dev` in another.
 
-See [`packages/mcp/README.md`](packages/mcp/README.md) for how to wire the
-MCP server into Claude Code or Cursor.
+## Contributing
+
+Adding an icon means adding both `src/icons/<Name>.tsx` and
+`src/icons/<Name>.json` in `packages/moticon`. Run
+`npm run fix:use-client --workspace=@moticon/react` afterward to patch in the
+`"use client"` directive automatically, then `npm run build:pkg` to
+regenerate the barrel and registry and confirm everything validates.
+
+## License
+
+MIT — see [LICENSE](packages/moticon/LICENSE).
+
+## Author
+
+[Farhad Sultanov](https://github.com/ferhadsultan98)

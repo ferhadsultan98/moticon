@@ -1,19 +1,19 @@
-# moticon
+# @moticon/react
 
 Animated icon components for React, built on [motion](https://motion.dev) (Framer Motion). 328 icons, each with a hand-built animation modeled on how the object actually moves — not a generic scale/opacity toggle applied to every icon.
 
 ## Install
 
 ```bash
-npm install moticon motion
+npm install @moticon/react motion
 ```
 
-`motion` is a peer dependency — install it alongside `moticon`.
+`motion` is a peer dependency — install it alongside `@moticon/react`.
 
 ## Usage
 
 ```tsx
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 
 export function Notification() {
   return <Bell size={24} />;
@@ -40,7 +40,7 @@ interface MoticonIconProps {
 Every icon already ships with its own `"use client"` directive, so they work as-is inside Next.js App Router server components — no extra client boundary needed:
 
 ```tsx
-import { Bell } from "moticon";
+import { Bell } from "@moticon/react";
 
 export function Notification() {
   return <Bell size={24} />;

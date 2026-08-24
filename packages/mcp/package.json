@@ -15,7 +15,7 @@
   },
   "type": "module",
   "bin": {
-    "moticon-mcp": "./dist/index.js"
+    "moticon-mcp": "dist/index.js"
   },
   "files": [
     "dist",
@@ -42,7 +42,7 @@
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
-    "moticon": "*",
+    "@moticon/react": "*",
     "zod": "^4.0.0"
   },
   "devDependencies": {

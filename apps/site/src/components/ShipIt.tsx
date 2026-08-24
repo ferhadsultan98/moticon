@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check } from "moticon";
+import { Copy, Check } from "@moticon/react";
 import { SyntaxCode } from "@/components/SyntaxCode";
 
-const exampleCode = `import { Bell, Book, Droplet } from "moticon";
+const exampleCode = `import { Bell, Book, Droplet } from "@moticon/react";
 
 export function Actions() {
   return (

@@ -1,4 +1,4 @@
-import { Code, Coffee, Heart, Star } from "moticon";
+import { Code, Coffee, Heart, Star } from "@moticon/react";
 import { formatStars } from "@/lib/github/format-stars";
 
 const REPO_URL = "https://github.com/ferhadsultan98/moticon";

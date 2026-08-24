@@ -102,7 +102,7 @@ export function createServer() {
     {
       title: "Add moticon icon to a project",
       description:
-        "Write one icon's React component source into the caller's project at the given file path, and return the import/JSX snippet to use it. The moticon package itself must still be installed (npm install moticon motion) — this tool only writes the component file it was asked for, mirroring how it's already vendored in this monorepo.",
+        "Write one icon's React component source into the caller's project at the given file path, and return the import/JSX snippet to use it. The @moticon/react package itself must still be installed (npm install @moticon/react motion) — this tool only writes the component file it was asked for, mirroring how it's already vendored in this monorepo.",
       inputSchema: ADD_ICON_SCHEMA,
     },
     async ({ name, targetPath }) => {
@@ -130,7 +130,7 @@ export function createServer() {
             type: "text",
             text: `Wrote ${name}.tsx to ${targetPath}.\n\nUsage:\n${importSnippet(
               name
-            ).replace('from "moticon"', `from "${targetPath}"`)}`,
+            ).replace('from "@moticon/react"', `from "${targetPath}"`)}`,
           },
         ],
       };

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { Check, Copy } from "moticon";
+import { Check, Copy } from "@moticon/react";
 import { iconComponents, iconMeta } from "@/lib/icons";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -43,7 +43,7 @@ export function IconDetail({ name }: { name: string }) {
 
   if (!meta || !Icon) return null;
 
-  const importCode = `import { ${name} } from "moticon";`;
+  const importCode = `import { ${name} } from "@moticon/react";`;
   const jsxCode = `<${name} size={${size}} color="${color}" strokeWidth={${strokeWidth}} />`;
 
   function copy(value: string, key: string) {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { Check, Copy, RefreshCw } from "moticon";
+import { Check, Copy, RefreshCw } from "@moticon/react";
 import { iconComponents, iconMeta } from "@/lib/icons";
 import { SelectMenu } from "@/components/SelectMenu";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
@@ -33,7 +33,7 @@ export function Playground() {
     () => iconMeta.find((item) => item.name === name) ?? iconMeta[0],
     [name]
   );
-  const code = `import { ${name} } from "moticon";\n\n<${name}\n  size={${size}}\n  color="${color}"\n  strokeWidth={${strokeWidth}}\n/>`;
+  const code = `import { ${name} } from "@moticon/react";\n\n<${name}\n  size={${size}}\n  color="${color}"\n  strokeWidth={${strokeWidth}}\n/>`;
 
   function copyCode() {
     navigator.clipboard.writeText(code);

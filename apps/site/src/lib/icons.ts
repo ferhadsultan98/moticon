@@ -1,7 +1,7 @@
-import * as MoticonIcons from "moticon";
-import { iconRegistry } from "moticon/registry";
-import type { MoticonIconMeta } from "moticon/registry";
-import type { MoticonIconProps } from "moticon";
+import * as MoticonIcons from "@moticon/react";
+import { iconRegistry } from "@moticon/react/registry";
+import type { MoticonIconMeta } from "@moticon/react/registry";
+import type { MoticonIconProps } from "@moticon/react";
 import type { ComponentType } from "react";
 
 export type IconMeta = MoticonIconMeta;

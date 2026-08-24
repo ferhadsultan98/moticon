@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Bell, CalendarClock, CloudRain, Rocket } from "moticon";
+import { Bell, CalendarClock, CloudRain, Rocket } from "@moticon/react";
 
 const previews = [
   ["Bell", Bell],

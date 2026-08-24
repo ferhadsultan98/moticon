@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy } from "moticon";
+import { Check, Copy } from "@moticon/react";
 import { SyntaxCode } from "@/components/SyntaxCode";
 
 export function CodeBlock({ code, lang = "tsx" }: { code: string; lang?: string }) {
