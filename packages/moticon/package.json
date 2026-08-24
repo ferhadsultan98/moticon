@@ -2,7 +2,10 @@
   "name": "@moticon/react",
   "version": "0.1.0",
   "description": "328 animated React icons, each modeling a real physical mechanic instead of a generic scale/opacity tween. Built on motion/react.",
-  "author": "Farhad Sultanov",
+  "author": {
+    "name": "Farhad Sultanov",
+    "url": "https://www.linkedin.com/in/farhadsultan/"
+  },
   "license": "MIT",
   "homepage": "https://github.com/ferhadsultan98/moticon#readme",
   "repository": {

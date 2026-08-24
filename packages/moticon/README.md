@@ -1,6 +1,31 @@
 # @moticon/react
 
-Animated icon components for React, built on [motion](https://motion.dev) (Framer Motion). 328 icons, each with a hand-built animation modeled on how the object actually moves — not a generic scale/opacity toggle applied to every icon.
+[![npm version](https://img.shields.io/npm/v/@moticon/react?color=3dff9e)](https://www.npmjs.com/package/@moticon/react)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@moticon/react?color=3dff9e)](https://bundlephobia.com/package/@moticon/react)
+[![license](https://img.shields.io/npm/l/@moticon/react?color=3dff9e)](https://github.com/ferhadsultan98/moticon/blob/main/packages/moticon/LICENSE)
+
+328 animated React icons, each modeling a real physical mechanic — swing,
+drip, unfurl, snap — instead of a generic scale/opacity tween applied to
+every icon. Built on [motion](https://motion.dev) (Framer Motion).
+
+Full catalog, live previews, and the copy-paste code for every icon:
+**[github.com/ferhadsultan98/moticon](https://github.com/ferhadsultan98/moticon)**
+
+## Why
+
+Most icon animation packages give every icon the same tween — scale up on
+hover, fade in on tap. moticon doesn't. Each of the 328 icons has its own
+hand-built motion spec that matches what the object actually does:
+
+- 🔔 `Bell` **rings**
+- ❤️ `Heart` **beats**
+- ⭐ `Star` **sparkles**
+- 📥 `Inbox` **receives**
+- 🔋 `BatteryCharging` **charges**
+- ✂️ `Scissors` **snaps**
+
+Fully typed, tree-shakeable, zero runtime CSS, `"use client"` baked into
+every icon so it drops straight into a Next.js App Router server component.
 
 ## Install
 
@@ -47,9 +72,25 @@ export function Notification() {
 }
 ```
 
-## Icon metadata
+## Metadata
 
-Each icon has a matching JSON file in `src/icons/` (e.g. `Bell.tsx` + `Bell.json`) describing its categories, tags, aliases, and animation spec:
+Each icon has a matching JSON file in `src/icons/` (e.g. `Bell.tsx` + `Bell.json`) describing its categories, tags, aliases, and animation spec — and that metadata is importable at runtime, safely from a React Server Component, via a separate entry point:
+
+```ts
+import { iconRegistry } from "@moticon/react/registry";
+
+iconRegistry.find((icon) => icon.name === "Bell");
+// {
+//   name: "Bell",
+//   category: "Communication",
+//   tags: ["bell", "ring", "communication"],
+//   aliases: [],
+//   motion: { trigger: "hover", mechanic: "ring", duration: 0.6, ease: "easeInOut" },
+//   ...
+// }
+```
+
+The raw per-icon JSON looks like this:
 
 ```json
 {
@@ -67,6 +108,16 @@ Each icon has a matching JSON file in `src/icons/` (e.g. `Bell.tsx` + `Bell.json
     "stiffness": null
   }
 }
+```
+
+## AI agents / MCP
+
+[`@moticon/mcp`](https://www.npmjs.com/package/@moticon/mcp) lets AI coding
+agents (Claude Code, Cursor, etc.) search this catalog and drop icons
+straight into a project:
+
+```bash
+claude mcp add moticon -- npx -y @moticon/mcp
 ```
 
 ## Development
@@ -96,11 +147,11 @@ missing directive automatically — it only touches files that need it.
 tree-shaken icon, and the registry) via [size-limit](https://github.com/ai/size-limit).
 It runs automatically before every `npm publish`.
 
-Icons are generated from [Lucide](https://lucide.dev) SVG paths via `scripts/generate-icons.mjs`, then hand-edited to add real per-icon motion.
+Icons are generated from [Lucide](https://lucide.dev) SVG paths, then hand-edited to add real per-icon motion.
 
 ## Author
 
-[Farhad Sultanov](https://github.com/ferhadsultan98)
+[Farhad Sultanov](https://www.linkedin.com/in/farhadsultan/) · [GitHub](https://github.com/ferhadsultan98)
 
 ## License
 

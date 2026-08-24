@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "Model Context Protocol server for the moticon icon library — lets AI coding agents search the catalog and drop animated React icons straight into a project.",
   "license": "MIT",
-  "author": "Farhad Sultanov",
+  "author": {
+    "name": "Farhad Sultanov",
+    "url": "https://www.linkedin.com/in/farhadsultan/"
+  },
   "homepage": "https://github.com/ferhadsultan98/moticon#readme",
   "repository": {
     "type": "git",

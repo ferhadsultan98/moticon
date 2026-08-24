@@ -155,4 +155,4 @@ MIT — see [LICENSE](packages/moticon/LICENSE).
 
 ## Author
 
-[Farhad Sultanov](https://github.com/ferhadsultan98)
+[Farhad Sultanov](https://www.linkedin.com/in/farhadsultan/) · [GitHub](https://github.com/ferhadsultan98)
