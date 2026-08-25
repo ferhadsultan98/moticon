@@ -6,6 +6,12 @@
     "packages/*",
     "apps/*"
   ],
+  "overrides": {
+    "tsup": {
+      "esbuild": "^0.28.2"
+    },
+    "esbuild": "^0.28.2"
+  },
   "scripts": {
     "build": "npm run build --workspace=@moticon/react && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
     "build:pkg": "npm run build --workspace=@moticon/react",
