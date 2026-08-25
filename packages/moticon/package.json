@@ -49,7 +49,7 @@
     "fix:use-client": "node scripts/inject-use-client.mjs",
     "build:registry": "node scripts/build-registry.mjs",
     "prebuild": "npm run generate:exports && npm run build:registry",
-    "build": "tsup && cross-env TSUP_TARGET=registry tsup",
+    "build": "cross-env TSUP_FORMAT=esm tsup && cross-env TSUP_FORMAT=cjs tsup && cross-env TSUP_TARGET=registry TSUP_FORMAT=esm tsup && cross-env TSUP_TARGET=registry TSUP_FORMAT=cjs tsup",
     "predev": "npm run generate:exports && npm run build:registry",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",

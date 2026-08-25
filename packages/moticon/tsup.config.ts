@@ -1,12 +1,13 @@
 import { defineConfig } from "tsup";
 
 const target = process.env.TSUP_TARGET;
+const format = process.env.TSUP_FORMAT as "esm" | "cjs" | undefined;
 
 const componentsConfig = {
   entry: { index: "src/index.ts" },
-  format: ["esm", "cjs"] as const,
-  dts: true,
-  clean: true,
+  format: [format ?? "esm"] as const,
+  dts: format === "esm" || !format,
+  clean: format === "esm" || !format,
   external: ["react", "motion"],
   banner: {
     js: '"use client";',
@@ -17,18 +18,19 @@ const registryConfig = {
   // Metadata registry only — no "use client" banner, safe to import
   // from React Server Components.
   entry: { registry: "src/registry.ts" },
-  format: ["esm", "cjs"] as const,
-  dts: true,
+  format: [format ?? "esm"] as const,
+  dts: format === "esm" || !format,
   clean: false,
 };
 
-// Built as two separate tsup invocations (see package.json's "build"
-// script), not two entries in one multi-entry config array. Running them
-// together is fine locally on Windows, but reliably fails on Vercel's Linux
-// build machine with "Cannot read file src/icons/package.json" — both
-// builds walk src/icons/ (328 files) at once and esbuild's file-system
-// layer races on it there. TSUP_TARGET selects which one this invocation
-// builds; package.json's "build" script runs them one after another.
+// Built as several sequential single-format tsup invocations (see
+// package.json's "build" script), not one multi-entry, multi-format config.
+// esbuild has a real, reproducible bug walking src/icons/ (328 files) when
+// this package is built with more than one of {entry, format} running
+// concurrently — it intermittently throws "Cannot read file
+// src/icons/package.json", confirmed in a clean Linux container (not just
+// on Vercel, and not a Windows-vs-Linux artifact). Every build step here
+// touches src/icons/ alone, one at a time.
 export default defineConfig(
   target === "registry" ? registryConfig : componentsConfig
 );
