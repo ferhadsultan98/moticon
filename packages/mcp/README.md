@@ -1,3 +1,5 @@
+![moticon — 328 icons that move with intent](https://raw.githubusercontent.com/ferhadsultan98/moticon/main/github-readme.png)
+
 # @moticon/mcp
 
 [![npm version](https://img.shields.io/npm/v/@moticon/mcp?color=3dff9e)](https://www.npmjs.com/package/@moticon/mcp)

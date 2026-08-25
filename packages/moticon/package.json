@@ -1,6 +1,6 @@
 {
   "name": "@moticon/react",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "328 animated React icons, each modeling a real physical mechanic instead of a generic scale/opacity tween. Built on motion/react.",
   "author": {
     "name": "Farhad Sultanov",
@@ -94,14 +94,22 @@
       "name": "full bundle (all 328 icons)",
       "path": "dist/index.js",
       "limit": "600 kB",
-      "ignore": ["react", "react-dom", "motion"]
+      "ignore": [
+        "react",
+        "react-dom",
+        "motion"
+      ]
     },
     {
       "name": "single icon (tree-shaken)",
       "path": "dist/index.js",
       "import": "{ Bell }",
       "limit": "10 kB",
-      "ignore": ["react", "react-dom", "motion"]
+      "ignore": [
+        "react",
+        "react-dom",
+        "motion"
+      ]
     },
     {
       "name": "registry only",

@@ -1,6 +1,6 @@
 {
   "name": "@moticon/mcp",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Model Context Protocol server for the moticon icon library — lets AI coding agents search the catalog and drop animated React icons straight into a project.",
   "license": "MIT",
   "author": {
