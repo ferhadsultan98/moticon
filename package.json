@@ -7,9 +7,6 @@
     "apps/*"
   ],
   "overrides": {
-    "tsup": {
-      "esbuild": "^0.28.2"
-    },
     "esbuild": "^0.28.2"
   },
   "scripts": {

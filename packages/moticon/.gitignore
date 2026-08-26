@@ -9,3 +9,6 @@ src/registry.ts
 
 # generated from src/icons/*.tsx by scripts/generate-exports.mjs
 src/index.ts
+
+# temp dir used by scripts/build.mjs while generating .d.ts files
+.dts-tmp

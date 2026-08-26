@@ -11,5 +11,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "src/moticon_20_benchmark_v2",
+    "src/moticon_v3_phase1_real"
+  ]
 }
