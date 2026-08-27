@@ -11,9 +11,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
-  "exclude": [
-    "src/moticon_20_benchmark_v2",
-    "src/moticon_v3_phase1_real"
-  ]
+  "include": ["src/index.ts", "src/registry.ts", "src/icons"],
+  "exclude": ["src/icons/*.json"]
 }
