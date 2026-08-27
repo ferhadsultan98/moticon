@@ -7,7 +7,7 @@
     "apps/*"
   ],
   "overrides": {
-    "esbuild": "^0.28.2"
+    "esbuild": "0.25.9"
   },
   "scripts": {
     "build": "npm run build --workspace=@moticon/react && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
