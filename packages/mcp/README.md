@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@moticon/mcp?color=3dff9e)](https://www.npmjs.com/package/@moticon/mcp)
 [![license](https://img.shields.io/npm/l/@moticon/mcp?color=3dff9e)](https://github.com/ferhadsultan98/moticon/blob/main/packages/mcp/LICENSE)
 
-A [Model Context Protocol](https://modelcontextprotocol.io) server for the [moticon](https://github.com/ferhadsultan98/moticon) icon library. Lets AI coding agents (Claude Code, Cursor, etc.) search the icon catalog and drop animated React icons straight into a project.
+A [Model Context Protocol](https://modelcontextprotocol.io) server for the [moticon](https://moticon-web.vercel.app/) icon library. Lets AI coding agents (Claude Code, Cursor, etc.) search the icon catalog and drop animated React icons straight into a project.
 
 ## Tools
 

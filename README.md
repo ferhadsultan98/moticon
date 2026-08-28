@@ -18,6 +18,7 @@
 </p>
 
 <p align="center">
+  <a href="https://moticon-web.vercel.app/"><strong>Live site</strong></a> ·
   <a href="#install">Install</a> ·
   <a href="#usage">Usage</a> ·
   <a href="#mcp-server">MCP server</a> ·
@@ -99,8 +100,9 @@ packages/moticon    @moticon/react on npm. 328 icon components, each paired
 
 packages/mcp         @moticon/mcp on npm. The MCP server above.
 
-apps/site            The showcase site. Imports icons AND metadata directly
-                     from @moticon/react — no local copy.
+apps/site            The showcase site — live at moticon-web.vercel.app.
+                     Imports icons AND metadata directly from
+                     @moticon/react — no local copy.
 ```
 
 ### Single source of truth

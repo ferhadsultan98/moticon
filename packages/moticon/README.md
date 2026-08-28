@@ -11,7 +11,8 @@ drip, unfurl, snap — instead of a generic scale/opacity tween applied to
 every icon. Built on [motion](https://motion.dev) (Framer Motion).
 
 Full catalog, live previews, and the copy-paste code for every icon:
-**[github.com/ferhadsultan98/moticon](https://github.com/ferhadsultan98/moticon)**
+**[moticon-web.vercel.app](https://moticon-web.vercel.app/)** ·
+source on [GitHub](https://github.com/ferhadsultan98/moticon)
 
 ## Why
 
