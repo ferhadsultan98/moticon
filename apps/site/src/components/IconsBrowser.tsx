@@ -8,7 +8,7 @@ import { Search } from "@moticon/react";
 import { SelectMenu } from "@/components/SelectMenu";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
-export default function IconsPage() {
+export function IconsBrowser() {
   const [query, setQuery] = useState("");
   const [trigger, setTrigger] = useState<"all" | "hover" | "tap">("all");
   const [mechanic, setMechanic] = useState("all");
@@ -71,11 +71,18 @@ export default function IconsPage() {
           items={[{ label: "Home", href: "/" }, { label: "Icons" }]}
         />
         <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-          {iconMeta.length} icons
+          icon catalog
         </p>
-        <h1 className="mb-6 text-2xl font-medium tracking-tight sm:text-3xl">
-          Browse the full set
+        <h1 className="mb-3 text-2xl font-medium tracking-tight sm:text-3xl">
+          Browse animated React icons
         </h1>
+        <p className="mb-8 max-w-2xl text-sm leading-7 text-muted">
+          Every moticon icon ships a hand-built physical animation — a bell rings,
+          a heart beats, a download drops — not a generic scale or rotate tween.
+          Search by name or meaning, filter by category, motion mechanic or
+          trigger, then open any icon for its install snippet, animation spec and
+          related icons.
+        </p>
 
         <div className="mb-8 space-y-3">
           <div className="flex items-center gap-2 rounded-md border border-border bg-surface px-3 py-2.5 focus-within:border-accent">
