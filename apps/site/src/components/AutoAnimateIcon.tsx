@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { iconComponents, iconMeta } from "@/lib/icons";
+import { iconComponents } from "@/lib/icon-components";
+import { iconMeta } from "@/lib/icons";
 
 export function AutoAnimateIcon({
   name,

@@ -10,6 +10,7 @@ export function Apple({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -24,12 +25,16 @@ export function Apple({
       {...props}
     >
       <motion.g
-        style={{ originX: "12px", originY: "3px" }}
+        style={{ transformOrigin: "12px 3px" }}
         initial="rest"
         whileTap={reduced ? undefined : "bite"}
         variants={{
           rest: { rotate: 0, scale: 1 },
-          bite: { rotate: [0, -8, 0], scale: [1, 0.9, 1], transition: { duration: 0.35, ease: "easeOut" } },
+          bite: {
+            rotate: [0, -10, 3, 0],
+            scale: [1, 0.9, 1.02, 1],
+            transition: { duration: 0.42, ease: "easeOut", times: [0, 0.4, 0.72, 1] },
+          },
         }}
       >
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />

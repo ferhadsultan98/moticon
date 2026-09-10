@@ -10,6 +10,7 @@ export function Bitcoin({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,9 +27,14 @@ export function Bitcoin({
       <motion.path
         initial="rest"
         whileHover={reduced ? undefined : "mine"}
+        style={{ transformOrigin: "12px 12px" }}
         variants={{
-          rest: { pathLength: 1 },
-          mine: { pathLength: [0, 1], transition: { duration: 0.6, ease: "easeInOut" } },
+          rest: { pathLength: 1, scale: 1 },
+          mine: {
+            pathLength: [0, 1],
+            scale: [1, 1.05, 1],
+            transition: { duration: 0.6, ease: "easeInOut", times: [0, 0.5, 1] },
+          },
         }}
         d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727"
       />

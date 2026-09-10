@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Bell, CalendarClock, CloudRain, Rocket } from "@moticon/react";
+import { trackEvent } from "@/lib/analytics";
 
 const previews = [
   ["Bell", Bell],
@@ -30,7 +31,8 @@ export function PlaygroundPreview() {
           </p>
           <Link
             href="/playground"
-            className="mt-6 inline-flex rounded-md bg-accent px-4 py-2.5 font-mono text-xs font-medium text-[#07130d] transition-transform hover:-translate-y-0.5"
+            onClick={() => trackEvent("playground_cta", { from: "homepage" })}
+            className="mt-6 inline-flex rounded-md border border-border-strong bg-surface px-4 py-2.5 font-mono text-xs text-foreground transition-colors hover:border-accent/40"
           >
             Open playground →
           </Link>

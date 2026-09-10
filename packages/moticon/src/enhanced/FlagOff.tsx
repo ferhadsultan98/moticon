@@ -1,0 +1,46 @@
+"use client";
+
+// Auto-generated enhanced copy. src/icons/FlagOff.tsx is not imported at runtime.
+import { createEnhancedIcon } from "./createEnhancedIcon";
+import { motion, useReducedMotion } from "motion/react";
+import type { MoticonIconProps } from "../icons/types";
+
+function OriginalFlagOff({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  force = false,
+  ...props
+}: MoticonIconProps & { force?: boolean }) {
+  const reduced = useReducedMotion();
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ overflow: "visible" }}
+      {...props}
+    >
+      <motion.g initial="rest" animate={force && !reduced ? "fall" : "rest"} whileTap={reduced ? undefined : "fall"}>
+        <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
+        <path d="M16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
+        <path d="M4 22V4" />
+        <path d="M7.656 2H8c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10.347" />
+        <motion.path
+          variants={{
+            rest: { pathLength: 1 },
+            fall: { pathLength: [0, 1], transition: { duration: 0.7, ease: "easeOut" } },
+          }}
+          d="m2 2 20 20"
+        />
+      </motion.g>
+    </svg>
+  );
+}
+
+export const FlagOff = createEnhancedIcon(OriginalFlagOff, {"name":"FlagOff","mechanic":"fall","profile":"travel","director":{"accent":"trail","anchor":[5.69,5.55],"vector":[3,3],"duration":0.876,"intensity":1.034,"complexity":2.0467}});

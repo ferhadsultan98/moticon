@@ -1,0 +1,61 @@
+"use client";
+
+// Auto-generated enhanced copy. src/icons/Binoculars.tsx is not imported at runtime.
+import { createEnhancedIcon } from "./createEnhancedIcon";
+import { motion, useReducedMotion } from "motion/react";
+import type { MoticonIconProps } from "../icons/types";
+
+function OriginalBinoculars({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  force = false,
+  ...props
+}: MoticonIconProps & { force?: boolean }) {
+  const reduced = useReducedMotion();
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ overflow: "visible" }}
+      {...props}
+    >
+      <motion.g initial="rest" animate={force && !reduced ? "focus" : "rest"} whileHover={reduced ? undefined : "focus"}>
+        <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
+        <path d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3" />
+        <path
+          fill="transparent"
+          d="M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z"
+        />
+        <path d="M 22 16 L 2 16" />
+        <path
+          fill="transparent"
+          d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"
+        />
+        <path d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3" />
+
+        <motion.path
+          style={{ transformOrigin: "12px 10px" }}
+          variants={{
+            rest: { scaleX: 1, scaleY: 1 },
+            focus: {
+              scaleX: [1, 2.1, 1.6, 1.85, 1],
+              scaleY: [1, 0.7, 1.1, 0.95, 1],
+              transition: { duration: 0.6, ease: "easeInOut", times: [0, 0.32, 0.6, 0.82, 1] },
+            },
+          }}
+          d="M10 10h4"
+        />
+      </motion.g>
+    </svg>
+  );
+}
+
+export const Binoculars = createEnhancedIcon(OriginalBinoculars, {"name":"Binoculars","mechanic":"focus","profile":"precision","director":{"accent":"scan","anchor":[5,5],"vector":[3,3],"duration":0.684,"intensity":1.047,"complexity":2.0609}});

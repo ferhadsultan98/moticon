@@ -10,6 +10,7 @@ export function Brain({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,10 +27,16 @@ export function Brain({
       <motion.g initial="rest" whileHover={reduced ? undefined : "think"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M12 18V5" />
+
         <motion.path
+          style={{ transformOrigin: "12px 11px" }}
           variants={{
-            rest: { opacity: 1 },
-            think: { opacity: [1, 0.3, 1], transition: { duration: 0.5, ease: "easeInOut" } },
+            rest: { opacity: 1, scale: 1 },
+            think: {
+              opacity: [1, 0.3, 1, 0.5, 1],
+              scale: [1, 0.96, 1.02, 0.99, 1],
+              transition: { duration: 0.62, ease: "easeInOut", times: [0, 0.25, 0.5, 0.75, 1] },
+            },
           }}
           d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"
         />

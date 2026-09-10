@@ -1,0 +1,27 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bike",
+    "bicycle",
+    "cycling",
+    "ride",
+    "transport"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [
+    "bicycle"
+  ],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "ride",
+    "duration": 0.7,
+    "ease": "linear",
+    "stiffness": null
+  }
+}

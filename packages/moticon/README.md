@@ -1,4 +1,4 @@
-![moticon — 328 icons that move with intent](https://raw.githubusercontent.com/ferhadsultan98/moticon/main/github-readme.png)
+![moticon — icons that move with intent](https://raw.githubusercontent.com/ferhadsultan98/moticon/main/github-readme.png)
 
 # @moticon/react
 
@@ -6,7 +6,7 @@
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@moticon/react?color=3dff9e)](https://bundlephobia.com/package/@moticon/react)
 [![license](https://img.shields.io/npm/l/@moticon/react?color=3dff9e)](https://github.com/ferhadsultan98/moticon/blob/main/packages/moticon/LICENSE)
 
-328 animated React icons, each modeling a real physical mechanic — swing,
+Enhanced animated React icons, each modeling a real physical mechanic — swing,
 drip, unfurl, snap — instead of a generic scale/opacity tween applied to
 every icon. Built on [motion](https://motion.dev) (Framer Motion).
 
@@ -17,8 +17,8 @@ source on [GitHub](https://github.com/ferhadsultan98/moticon)
 ## Why
 
 Most icon animation packages give every icon the same tween — scale up on
-hover, fade in on tap. moticon doesn't. Each of the 328 icons has its own
-hand-built motion spec that matches what the object actually does:
+hover, fade in on tap. moticon doesn't. Each icon has its own hand-built
+motion spec that matches what the object actually does:
 
 - 🔔 `Bell` **rings**
 - ❤️ `Heart` **beats**
@@ -88,10 +88,27 @@ iconRegistry.find((icon) => icon.name === "Bell");
 //   category: "Communication",
 //   tags: ["bell", "ring", "communication"],
 //   aliases: [],
-//   motion: { trigger: "hover", mechanic: "ring", duration: 0.6, ease: "easeInOut" },
+//   mechanic: "ring", trigger: "hover", duration: 0.6, ease: "easeInOut",
+//   capabilities: { stateful: true, states: ["idle", "active"], controllable: true },
 //   ...
 // }
 ```
+
+### Capabilities
+
+`capabilities` describes what an icon can do beyond its default hover/tap
+animation:
+
+| Field | Meaning |
+|---|---|
+| `stateful` | Accepts a `state` prop that drives distinct named animations |
+| `states` | The named states it understands (first is the default) |
+| `controllable` | Can be driven imperatively (roadmap) |
+| `cssCompatible` | Has a verified pure-CSS equivalent (roadmap) |
+| `reactNativeCompatible` | Has a verified Reanimated renderer (roadmap) |
+
+Optional fields are only present once **verified** — an absent field means
+"not yet audited", never "not capable".
 
 The raw per-icon JSON looks like this:
 
@@ -113,6 +130,19 @@ The raw per-icon JSON looks like this:
 }
 ```
 
+## Other ways to use these icons (roadmap)
+
+You won't have to take `@moticon/react` as a dependency:
+
+- a **`moticon` CLI** to copy component source into your repo (shadcn-style) —
+  built in [`packages/cli`](https://github.com/ferhadsultan98/moticon/tree/main/packages/cli),
+  not yet published
+- a **shadcn registry** — every icon as a
+  [shadcn registry item](https://ui.shadcn.com/docs/registry), generated in the
+  repo and deploying with the site
+
+Both ship after the site deployment that serves the registry.
+
 ## AI agents / MCP
 
 [`@moticon/mcp`](https://www.npmjs.com/package/@moticon/mcp) lets AI coding
@@ -132,9 +162,11 @@ npm run dev     # same, then watches for changes
 ```
 
 `src/index.ts` (the component barrel) and `src/registry.ts` (the metadata
-registry) are both generated, not hand-maintained — running `build` or `dev`
-regenerates them from `src/icons/*.tsx` and `src/icons/*.json` first. Adding
-a new icon means adding both files; the generator fails the build if:
+registry, with `src/capabilities.json` merged in) are both generated, not
+hand-maintained — running `build` or `dev` regenerates them from
+`src/icons/*.tsx`, `src/icons/*.json` and `src/capabilities.json` first.
+Adding a new icon means adding both per-icon files; the generator fails the
+build if:
 
 - either file is missing its counterpart
 - a `.json` is missing a required field from `icon.schema.json`

@@ -10,6 +10,7 @@ export function BellRing({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,11 +27,16 @@ export function BellRing({
       <motion.g initial="rest" whileHover={reduced ? undefined : "ring"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+
         <motion.g
-          style={{ originX: "12px", originY: "4px" }}
+          style={{ transformOrigin: "12px 4px" }}
           variants={{
-            rest: { rotate: 0 },
-            ring: { rotate: [0, -10, 8, -6, 0], transition: { duration: 0.5, ease: "easeInOut" } },
+            rest: { rotate: 0, y: 0 },
+            ring: {
+              rotate: [0, -9, 10, -6.5, 3.5, -1.5, 0],
+              y: [0, -0.3, 0, 0, 0, 0, 0],
+              transition: { duration: 0.72, ease: "easeInOut", times: [0, 0.12, 0.3, 0.5, 0.68, 0.85, 1] },
+            },
           }}
         >
           <path
@@ -38,19 +44,28 @@ export function BellRing({
             d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"
           />
         </motion.g>
+
         <motion.path
-          style={{ originX: "22px", originY: "8px" }}
+          style={{ transformOrigin: "22px 8px" }}
           variants={{
-            rest: { scale: 1 },
-            ring: { scale: [1, 1.3, 1], transition: { duration: 0.5, ease: "easeInOut" } },
+            rest: { scale: 1, opacity: 1 },
+            ring: {
+              scale: [1, 1.35, 1.05, 1.15, 1],
+              opacity: [1, 1, 0.7, 1, 1],
+              transition: { duration: 0.5, ease: "easeInOut", delay: 0.05, times: [0, 0.3, 0.55, 0.78, 1] },
+            },
           }}
           d="M22 8c0-2.3-.8-4.3-2-6"
         />
         <motion.path
-          style={{ originX: "2px", originY: "8px" }}
+          style={{ transformOrigin: "2px 8px" }}
           variants={{
-            rest: { scale: 1 },
-            ring: { scale: [1, 1.3, 1], transition: { duration: 0.5, ease: "easeInOut" } },
+            rest: { scale: 1, opacity: 1 },
+            ring: {
+              scale: [1, 1.35, 1.05, 1.15, 1],
+              opacity: [1, 1, 0.7, 1, 1],
+              transition: { duration: 0.5, ease: "easeInOut", delay: 0.05, times: [0, 0.3, 0.55, 0.78, 1] },
+            },
           }}
           d="M4 2C2.8 3.7 2 5.7 2 8"
         />

@@ -1,0 +1,346 @@
+{
+  "notification": [
+    "Bell",
+    "BellRing"
+  ],
+  "notifications": [
+    "Bell",
+    "BellRing"
+  ],
+  "alert": [
+    "BellRing",
+    "AlertTriangle",
+    "AlertCircle"
+  ],
+  "reminder": [
+    "Bell",
+    "AlarmClock"
+  ],
+  "mute": [
+    "BellOff",
+    "VolumeX"
+  ],
+  "silence": [
+    "BellOff"
+  ],
+  "delete": [
+    "Trash",
+    "X"
+  ],
+  "remove": [
+    "Trash",
+    "X"
+  ],
+  "close": [
+    "X"
+  ],
+  "dismiss": [
+    "X"
+  ],
+  "cut": [
+    "Scissors"
+  ],
+  "copy": [
+    "Copy",
+    "ClipboardCopy"
+  ],
+  "paste": [
+    "Clipboard",
+    "ClipboardCheck"
+  ],
+  "logout": [
+    "LogOut"
+  ],
+  "log out": [
+    "LogOut"
+  ],
+  "signout": [
+    "LogOut"
+  ],
+  "login": [
+    "LogIn"
+  ],
+  "sign in": [
+    "LogIn"
+  ],
+  "settings": [
+    "Settings"
+  ],
+  "preferences": [
+    "Settings"
+  ],
+  "search": [
+    "Search"
+  ],
+  "find": [
+    "Search"
+  ],
+  "loading": [
+    "Loader",
+    "RefreshCw"
+  ],
+  "spinner": [
+    "Loader"
+  ],
+  "refresh": [
+    "RefreshCw"
+  ],
+  "reload": [
+    "RefreshCw"
+  ],
+  "download": [
+    "Download"
+  ],
+  "upload": [
+    "Upload"
+  ],
+  "share": [
+    "Share"
+  ],
+  "send": [
+    "Send",
+    "SendHorizontal"
+  ],
+  "favorite": [
+    "Heart",
+    "Star"
+  ],
+  "like": [
+    "Heart",
+    "ThumbsUp"
+  ],
+  "bookmark": [
+    "Bookmark"
+  ],
+  "save": [
+    "Save",
+    "Bookmark"
+  ],
+  "edit": [
+    "Pencil"
+  ],
+  "add": [
+    "Plus"
+  ],
+  "new": [
+    "Plus"
+  ],
+  "menu": [
+    "Menu"
+  ],
+  "hamburger": [
+    "Menu"
+  ],
+  "back": [
+    "ArrowLeft"
+  ],
+  "next": [
+    "ArrowRight"
+  ],
+  "forward": [
+    "ArrowRight"
+  ],
+  "expand": [
+    "ChevronDown",
+    "Plus"
+  ],
+  "collapse": [
+    "ChevronUp"
+  ],
+  "play": [
+    "Play"
+  ],
+  "pause": [
+    "Pause"
+  ],
+  "success": [
+    "Check",
+    "CheckCircle",
+    "BadgeCheck"
+  ],
+  "done": [
+    "Check",
+    "CheckCircle"
+  ],
+  "error": [
+    "XCircle",
+    "AlertTriangle"
+  ],
+  "warning": [
+    "AlertTriangle"
+  ],
+  "info": [
+    "Info",
+    "AlertCircle"
+  ],
+  "help": [
+    "HelpCircle"
+  ],
+  "question": [
+    "HelpCircle"
+  ],
+  "user": [
+    "User"
+  ],
+  "account": [
+    "User"
+  ],
+  "profile": [
+    "User"
+  ],
+  "people": [
+    "Users"
+  ],
+  "team": [
+    "Users"
+  ],
+  "calendar": [
+    "Calendar",
+    "CalendarCheck"
+  ],
+  "date": [
+    "Calendar"
+  ],
+  "time": [
+    "Clock",
+    "Timer"
+  ],
+  "location": [
+    "MapPin"
+  ],
+  "place": [
+    "MapPin"
+  ],
+  "map": [
+    "Map",
+    "MapPin"
+  ],
+  "home": [
+    "Home"
+  ],
+  "cart": [
+    "ShoppingCart"
+  ],
+  "bag": [
+    "ShoppingBag"
+  ],
+  "buy": [
+    "ShoppingCart",
+    "CreditCard"
+  ],
+  "payment": [
+    "CreditCard",
+    "Wallet",
+    "Banknote"
+  ],
+  "money": [
+    "Banknote",
+    "DollarSign",
+    "Wallet",
+    "Coins"
+  ],
+  "crypto": [
+    "Bitcoin"
+  ],
+  "attachment": [
+    "Paperclip"
+  ],
+  "attach": [
+    "Paperclip"
+  ],
+  "file": [
+    "File",
+    "FileText"
+  ],
+  "folder": [
+    "Folder"
+  ],
+  "image": [
+    "Image"
+  ],
+  "photo": [
+    "Image",
+    "Camera"
+  ],
+  "link": [
+    "Link"
+  ],
+  "lock": [
+    "Lock"
+  ],
+  "secure": [
+    "Lock",
+    "ShieldCheck"
+  ],
+  "unlock": [
+    "Unlock"
+  ],
+  "visible": [
+    "Eye"
+  ],
+  "hidden": [
+    "EyeOff"
+  ],
+  "dark": [
+    "Moon"
+  ],
+  "light": [
+    "Sun"
+  ],
+  "theme": [
+    "Sun",
+    "Moon"
+  ],
+  "filter": [
+    "Filter"
+  ],
+  "grid": [
+    "Grid",
+    "LayoutGrid"
+  ],
+  "email": [
+    "Mail"
+  ],
+  "mail": [
+    "Mail"
+  ],
+  "message": [
+    "MessageSquare",
+    "MessageCircle"
+  ],
+  "chat": [
+    "MessageCircle",
+    "MessageSquare"
+  ],
+  "phone": [
+    "Phone"
+  ],
+  "call": [
+    "Phone",
+    "PhoneCall"
+  ],
+  "wifi": [
+    "Wifi"
+  ],
+  "offline": [
+    "WifiOff"
+  ],
+  "battery": [
+    "Battery",
+    "BatteryFull",
+    "BatteryLow"
+  ],
+  "power": [
+    "Zap"
+  ],
+  "volume": [
+    "Volume2",
+    "Volume1"
+  ],
+  "sound": [
+    "Volume2"
+  ],
+  "clipboard": [
+    "Clipboard"
+  ]
+}

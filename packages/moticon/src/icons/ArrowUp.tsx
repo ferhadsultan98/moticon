@@ -10,6 +10,7 @@ export function ArrowUp({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -28,7 +29,10 @@ export function ArrowUp({
         whileHover={reduced ? undefined : "slide"}
         variants={{
           rest: { y: 0 },
-          slide: { y: -3, transition: { duration: 0.25, ease: "easeOut" } },
+          slide: {
+            y: [0, -4.2, -3.4, -3.7],
+            transition: { duration: 0.4, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+          },
         }}
       >
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />

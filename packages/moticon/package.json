@@ -1,16 +1,17 @@
 {
   "name": "@moticon/react",
   "version": "0.1.2",
-  "description": "328 animated React icons, each modeling a real physical mechanic instead of a generic scale/opacity tween. Built on motion/react.",
+  "description": "Animated React icons with object-specific motion mechanics — each icon's animation models how the real object moves (a bell rings, a heart beats, a download drops), not a generic scale/rotate tween. Typed, tree-shakeable, Next.js App Router compatible, respects prefers-reduced-motion. Built on Motion (Framer Motion).",
   "author": {
     "name": "Farhad Sultanov",
     "url": "https://www.linkedin.com/in/farhadsultan/"
   },
   "license": "MIT",
-  "homepage": "https://github.com/ferhadsultan98/moticon#readme",
+  "homepage": "https://moticon-web.vercel.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ferhadsultan98/moticon.git"
+    "url": "git+https://github.com/ferhadsultan98/moticon.git",
+    "directory": "packages/moticon"
   },
   "bugs": {
     "url": "https://github.com/ferhadsultan98/moticon/issues"
@@ -45,12 +46,13 @@
     "node": ">=18"
   },
   "scripts": {
+    "build:gpt-playground": "node scripts/build-gpt-playground-icons.mjs",
     "generate:exports": "node scripts/generate-exports.mjs",
     "fix:use-client": "node scripts/inject-use-client.mjs",
     "build:registry": "node scripts/build-registry.mjs",
-    "prebuild": "npm run generate:exports && npm run build:registry",
+    "prebuild": "npm run build:gpt-playground && npm run generate:exports && npm run build:registry",
     "build": "node scripts/build.mjs",
-    "predev": "npm run generate:exports && npm run build:registry",
+    "predev": "npm run build:gpt-playground && npm run generate:exports && npm run build:registry",
     "dev": "npm run build",
     "typecheck": "tsc --noEmit",
     "size": "size-limit",
@@ -58,23 +60,28 @@
   },
   "keywords": [
     "icons",
-    "icon-library",
     "react",
     "react-icons",
+    "icon-library",
     "animated-icons",
+    "animated-svg-icons",
+    "animated-react-icons",
+    "motion-icons",
+    "micro-interactions",
+    "ui-animation",
     "animation",
     "motion",
     "framer-motion",
-    "motion-react",
     "svg",
     "svg-icons",
     "lucide",
-    "lucide-icons",
-    "typescript"
+    "tree-shakeable",
+    "typescript",
+    "nextjs"
   ],
   "peerDependencies": {
-    "motion": ">=11",
-    "react": ">=18"
+    "motion": ">=11 <14",
+    "react": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^13.0.3",
@@ -89,7 +96,7 @@
   },
   "size-limit": [
     {
-      "name": "full bundle (all 328 icons)",
+      "name": "full bundle (all 343 icons)",
       "path": "dist/index.js",
       "limit": "600 kB",
       "ignore": [

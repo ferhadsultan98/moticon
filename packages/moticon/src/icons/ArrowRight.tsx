@@ -10,6 +10,7 @@ export function ArrowRight({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -28,7 +29,10 @@ export function ArrowRight({
         whileHover={reduced ? undefined : "slide"}
         variants={{
           rest: { x: 0 },
-          slide: { x: 3, transition: { duration: 0.25, ease: "easeOut" } },
+          slide: {
+            x: [0, 4.2, 3.4, 3.7],
+            transition: { duration: 0.4, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+          },
         }}
       >
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />

@@ -10,6 +10,7 @@ export function Sunset({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -32,10 +33,16 @@ export function Sunset({
         <path d="M22 22H2" />
         <path d="m16 6-4 4-4-4" />
         <path d="M16 18a4 4 0 0 0-8 0" />
+
         <motion.path
+          style={{ transformOrigin: "12px 2px" }}
           variants={{
-            rest: { y: 0 },
-            set: { y: 3, transition: { duration: 0.4, ease: "easeOut" } },
+            rest: { y: 0, scaleY: 1 },
+            set: {
+              y: [0, 3.6, 2.9, 3.15],
+              scaleY: [1, 1.03, 0.99, 1],
+              transition: { duration: 0.44, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
           d="M12 10V2"
         />

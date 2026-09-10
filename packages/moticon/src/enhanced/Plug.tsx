@@ -1,0 +1,54 @@
+"use client";
+
+// Auto-generated enhanced copy. src/icons/Plug.tsx is not imported at runtime.
+import { createEnhancedIcon } from "./createEnhancedIcon";
+import { motion, useReducedMotion } from "motion/react";
+import type { MoticonIconProps } from "../icons/types";
+
+function OriginalPlug({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  force = false,
+  ...props
+}: MoticonIconProps & { force?: boolean }) {
+  const reduced = useReducedMotion();
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ overflow: "visible" }}
+      {...props}
+    >
+      <motion.g initial="rest" animate={force && !reduced ? "plugin" : "rest"} whileHover={reduced ? undefined : "plugin"}>
+        <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
+        <path d="M15 8V2" />
+        <path
+          fill="transparent"
+          d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"
+        />
+        <path d="M9 8V2" />
+
+        <motion.path
+          variants={{
+            rest: { y: 0 },
+            plugin: {
+              y: [0, 2.4, 1.9, 2.1],
+              transition: { duration: 0.34, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+            },
+          }}
+          d="M12 22v-5"
+        />
+      </motion.g>
+    </svg>
+  );
+}
+
+export const Plug = createEnhancedIcon(OriginalPlug, {"name":"Plug","mechanic":"plugin","profile":"flow","director":{"accent":"flow","anchor":[5,5],"vector":[3,2.4],"duration":0.476,"intensity":1.023,"complexity":2.0461}});

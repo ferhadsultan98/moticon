@@ -10,6 +10,7 @@ export function Users({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -25,19 +26,27 @@ export function Users({
     >
       <motion.g initial="rest" whileHover={reduced ? undefined : "huddle"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
+
         <motion.g
           variants={{
             rest: { x: 0 },
-            huddle: { x: 0.5, transition: { duration: 0.3, ease: "easeOut" } },
+            huddle: {
+              x: [0, 0.9, 0.5, 0.7],
+              transition: { duration: 0.42, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
         >
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
         </motion.g>
+
         <motion.g
           variants={{
             rest: { x: 0 },
-            huddle: { x: -0.5, transition: { duration: 0.3, ease: "easeOut" } },
+            huddle: {
+              x: [0, -0.9, -0.5, -0.7],
+              transition: { duration: 0.42, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
         >
           <path d="M16 3.128a4 4 0 0 1 0 7.744" />

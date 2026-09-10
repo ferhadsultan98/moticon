@@ -10,6 +10,7 @@ export function Anchor({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -24,12 +25,15 @@ export function Anchor({
       {...props}
     >
       <motion.g
-        style={{ originX: "12px", originY: "4px" }}
+        style={{ transformOrigin: "12px 4px" }}
         initial="rest"
         whileHover={reduced ? undefined : "sway"}
         variants={{
           rest: { rotate: 0 },
-          sway: { rotate: [0, 6, -6, 3, 0], transition: { duration: 0.6, ease: "easeInOut" } },
+          sway: {
+            rotate: [0, 7, -8, 5, -2.5, 0],
+            transition: { duration: 0.78, ease: "easeInOut", times: [0, 0.22, 0.48, 0.7, 0.87, 1] },
+          },
         }}
       >
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />

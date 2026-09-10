@@ -1,162 +1,92 @@
-import { CodeBlock } from "@/components/CodeBlock";
-import { Footer } from "@/components/Footer";
-import { Bell } from "@moticon/react";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumb } from "@/components/Breadcrumb";
+import { Footer } from "@/components/Footer";
+import { DocsShell } from "@/components/DocsShell";
+import { CodeBlock } from "@/components/CodeBlock";
+import { JsonLd } from "@/components/SiteJsonLd";
+import { DOC_PAGES } from "@/lib/docs";
+import { SITE_URL, absoluteUrl } from "@/lib/site";
 
-const installVariants = `npm install moticon
-pnpm add moticon
-yarn add moticon
-bun add moticon`;
+const title = "Documentation";
+const description =
+  "Install @moticon/react and use animated icons in React and Next.js: props, styling, SSR, tree-shaking, TypeScript and accessibility.";
 
-const usageCode = `import { Bell } from "@moticon/react";
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/docs" },
+  openGraph: { title: `${title} — moticon`, description, url: absoluteUrl("/docs"), type: "website" },
+  twitter: { card: "summary_large_image", title: `${title} — moticon`, description },
+};
 
-export function Notification() {
-  return <Bell size={24} />;
-}`;
-
-const propsCode = `interface MoticonIconProps {
-  size?: number;        // optional — default: 24px
-  color?: string;       // optional — inherits currentColor
-  strokeWidth?: number; // optional — default: 2
-  className?: string;   // optional — your CSS class
-}`;
-
-const stylingCode = `<Bell
-  size={32}
-  color="#3dff9e"
-  strokeWidth={1.75}
-  className="notification-icon"
-/>`;
-
-const accessibleCode = `<button aria-label="Open notifications">
-  <Bell aria-hidden="true" />
-</button>`;
-
-const nextCode = `// app/components/notification.tsx
-"use client";
-
-import { Bell } from "@moticon/react";
+const quickstart = `npm install @moticon/react motion`;
+const firstIcon = `import { Bell } from "@moticon/react";
 
 export function Notification() {
   return <Bell size={24} />;
 }`;
 
-export default function DocsPage() {
+export default function DocsIndexPage() {
   return (
     <>
-      <main className="mx-auto w-full min-w-0 max-w-6xl px-4 pb-12 pt-16 sm:px-6 sm:pb-16 sm:pt-20">
-        <div className="w-full max-w-3xl">
-          <Breadcrumb
-            items={[{ label: "Home", href: "/" }, { label: "Docs" }]}
-          />
-          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-            documentation
-          </p>
-          <h1 className="mb-4 text-3xl font-medium tracking-tight md:text-4xl">
-            Get started with moticon
-          </h1>
-          <p className="mb-12 max-w-xl text-base text-muted">
-            328 animated React icons, each modeling a real physical mechanic.
-            Zero config, fully typed, tree-shakeable.
-          </p>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "@id": `${SITE_URL}/docs#page`,
+          url: `${SITE_URL}/docs`,
+          name: "moticon documentation",
+          description,
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          hasPart: DOC_PAGES.map((d) => ({
+            "@type": "TechArticle",
+            url: absoluteUrl(`/docs/${d.slug}`),
+            name: d.title,
+            abstract: d.description,
+          })),
+        }}
+      />
+      <DocsShell>
+        <h1>Documentation</h1>
+        <p className="lead">
+          moticon is a set of animated React icons. Every icon ships a
+          hand-built animation modeled on the physical action it depicts — no
+          generic scale or fade. This section covers installation and every
+          integration detail.
+        </p>
 
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            01 · Install
-          </h2>
-          <CodeBlock code={installVariants} lang="bash" />
-        </section>
+        <h2>Quick start</h2>
+        <p>Install the package and its one peer dependency:</p>
+        <CodeBlock code={quickstart} lang="bash" />
+        <p>Import any icon by name and render it:</p>
+        <CodeBlock code={firstIcon} />
+        <p>
+          The animation triggers automatically on hover or tap. That&rsquo;s the
+          whole setup — no provider, no config, no CSS import.
+        </p>
 
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            02 · Usage
-          </h2>
-          <p className="mb-4 text-sm text-muted">
-            Import any icon by name and drop it in — animation triggers
-            automatically on hover or tap depending on the icon.
-          </p>
-          <CodeBlock code={usageCode} />
-          <div className="mt-4 flex h-24 items-center justify-center rounded-lg border border-border bg-background">
-            <Bell size={32} strokeWidth={1.75} className="text-accent" />
-          </div>
-        </section>
+        <h2>Guides</h2>
+        <ul>
+          {DOC_PAGES.map((page) => (
+            <li key={page.slug}>
+              <Link href={`/docs/${page.slug}`}>{page.title}</Link> — {page.description}
+            </li>
+          ))}
+        </ul>
 
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            03 · Props
-          </h2>
-          <p className="mb-4 text-sm text-muted">
-            Every icon accepts the same typed prop shape. In TypeScript, the
-            question mark means that prop is optional—you can omit it and use
-            the documented default.
-          </p>
-          <CodeBlock code={propsCode} lang="ts" />
-        </section>
-
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            04 · Styling
-          </h2>
-          <p className="mb-4 text-sm leading-6 text-muted">
-            Icons inherit the current text color by default. Override size,
-            color and stroke directly or with a class name.
-          </p>
-          <CodeBlock code={stylingCode} />
-        </section>
-
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            05 · Next.js
-          </h2>
-          <p className="mb-4 text-sm leading-6 text-muted">
-            Animated icons are interactive Client Components. Add the client
-            boundary to the component that imports them.
-          </p>
-          <CodeBlock code={nextCode} />
-        </section>
-
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            06 · Accessibility
-          </h2>
-          <p className="mb-4 text-sm leading-6 text-muted">
-            Label the interactive control, not the decorative icon inside it.
-            Tap icons remain keyboard-operable when placed inside a button.
-          </p>
-          <CodeBlock code={accessibleCode} />
-        </section>
-
-        <section className="mb-14">
-          <h2 className="mb-4 font-mono text-sm uppercase tracking-wider text-foreground">
-            07 · Reduced motion
-          </h2>
-          <p className="text-sm text-muted">
-            Icons respect{" "}
-            <code className="rounded bg-surface px-1.5 py-0.5 font-mono text-xs">
-              prefers-reduced-motion
-            </code>{" "}
-            automatically — no extra configuration needed. Users who disable
-            motion in their OS settings see the static icon only.
-          </p>
-        </section>
-
-        <section className="rounded-xl border border-border bg-surface p-6">
-          <h2 className="font-mono text-sm uppercase tracking-wider text-foreground">
-            Need a live example?
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-muted">
-            Use the playground to test every prop and copy the generated code.
-          </p>
-          <Link
-            href="/playground"
-            className="mt-5 inline-flex font-mono text-xs text-accent hover:underline"
-          >
-            Open playground →
-          </Link>
-        </section>
-        </div>
-      </main>
+        <h2>Related</h2>
+        <ul>
+          <li>
+            <Link href="/icons">Browse all icons</Link>
+          </li>
+          <li>
+            <Link href="/playground">Playground — configure and copy any icon</Link>
+          </li>
+          <li>
+            <Link href="/examples">Examples — animated icons in real UI patterns</Link>
+          </li>
+        </ul>
+      </DocsShell>
       <Footer />
     </>
   );

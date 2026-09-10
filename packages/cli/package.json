@@ -1,0 +1,66 @@
+{
+  "name": "moticon",
+  "version": "0.1.0",
+  "description": "CLI for moticon — copies hand-animated React icon components into your project (shadcn-style). The copied files are plain source you own; your app's only runtime dependency is motion.",
+  "license": "MIT",
+  "author": {
+    "name": "Farhad Sultanov",
+    "url": "https://www.linkedin.com/in/farhadsultan/"
+  },
+  "homepage": "https://moticon-web.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferhadsultan98/moticon.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/ferhadsultan98/moticon/issues"
+  },
+  "type": "module",
+  "bin": {
+    "moticon": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.19"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "moticon",
+    "cli",
+    "icons",
+    "react",
+    "react-icons",
+    "animated-icons",
+    "animated-react-icons",
+    "icon-library",
+    "shadcn",
+    "shadcn-registry",
+    "copy-paste-components",
+    "motion",
+    "framer-motion",
+    "svg-icons",
+    "micro-interactions",
+    "typescript"
+  ],
+  "dependencies": {
+    "@moticon/react": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

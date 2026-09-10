@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "kite",
+    "fly",
+    "wind",
+    "play",
+    "sky"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "fly",
+    "duration": 1,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

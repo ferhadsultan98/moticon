@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "swing",
+    "playground",
+    "pendulum",
+    "sway",
+    "play"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "swing",
+    "duration": 1.3,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

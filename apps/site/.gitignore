@@ -39,6 +39,12 @@ yarn-error.log*
 # generated at build time from packages/moticon/src/icons/*.json
 /src/generated/
 
+# shadcn registry — regenerated from packages/moticon/src/enhanced/*.tsx by
+# `npm run build:registry` (runs in prebuild); the served JSON is a build artifact
+/registry/
+/registry.json
+/public/r/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

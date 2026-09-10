@@ -433,3 +433,86 @@ footer {
   background: var(--accent-dim);
   color: var(--accent);
 }
+
+/* Documentation article typography */
+.prose-docs {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+.prose-docs > * + * {
+  margin-top: 1rem;
+}
+.prose-docs h1 {
+  color: var(--foreground);
+  font-size: 1.875rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: 0;
+}
+.prose-docs h2 {
+  color: var(--foreground);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+.prose-docs h3 {
+  color: var(--foreground);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.75rem;
+}
+.prose-docs p.lead {
+  font-size: 1.0625rem;
+  color: var(--muted);
+}
+.prose-docs a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.prose-docs a:hover {
+  text-decoration: underline;
+}
+.prose-docs strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose-docs ul,
+.prose-docs ol {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.prose-docs ul {
+  list-style: disc;
+}
+.prose-docs ol {
+  list-style: decimal;
+}
+.prose-docs :not(pre) > code {
+  background: var(--surface);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+}
+.prose-docs table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.prose-docs th,
+.prose-docs td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.prose-docs th {
+  color: var(--foreground);
+  font-weight: 500;
+}

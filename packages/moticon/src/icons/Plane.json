@@ -1,0 +1,27 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "plane",
+    "airplane",
+    "flight",
+    "travel",
+    "takeoff"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [
+    "airplane"
+  ],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "takeoff",
+    "duration": 0.5,
+    "ease": "easeIn",
+    "stiffness": null
+  }
+}

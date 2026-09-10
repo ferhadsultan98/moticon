@@ -10,6 +10,7 @@ export function ChevronDown({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -28,7 +29,10 @@ export function ChevronDown({
         whileHover={reduced ? undefined : "drop"}
         variants={{
           rest: { y: 0 },
-          drop: { y: 3, transition: { duration: 0.2, ease: "easeOut" } },
+          drop: {
+            y: [0, 3.6, 2.9, 3.15],
+            transition: { duration: 0.34, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+          },
         }}
         d="m6 9 6 6 6-6"
       />

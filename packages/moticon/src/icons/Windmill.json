@@ -1,0 +1,27 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "windmill",
+    "wind",
+    "turbine",
+    "energy",
+    "spin"
+  ],
+  "categories": [
+    "Weather & Nature"
+  ],
+  "aliases": [
+    "turbine"
+  ],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "spin",
+    "duration": 0.9,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

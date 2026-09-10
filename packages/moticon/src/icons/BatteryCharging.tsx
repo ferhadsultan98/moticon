@@ -10,6 +10,7 @@ export function BatteryCharging({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -28,10 +29,17 @@ export function BatteryCharging({
         <path d="M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935" />
         <path d="M22 14v-4" />
         <path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936" />
+
         <motion.path
+          style={{ transformOrigin: "9px 12px" }}
           variants={{
-            rest: { y: 0, opacity: 1 },
-            charge: { y: [-2, 0], opacity: [0.4, 1], transition: { duration: 0.35, ease: "easeOut" } },
+            rest: { y: 0, opacity: 1, scale: 1 },
+            charge: {
+              y: [-3, 0.3, 0],
+              opacity: [0.2, 1, 1],
+              scale: [0.9, 1.06, 1],
+              transition: { duration: 0.4, ease: "easeOut", times: [0, 0.75, 1] },
+            },
           }}
           d="m11 7-3 5h4l-3 5"
         />

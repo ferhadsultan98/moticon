@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Check, Copy, RefreshCw } from "@moticon/react";
-import { iconComponents, iconMeta } from "@/lib/icons";
+import { iconComponents } from "@/lib/icon-components";
+import { iconMeta } from "@/lib/icons";
 import { SelectMenu } from "@/components/SelectMenu";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
 import { Breadcrumb } from "@/components/Breadcrumb";

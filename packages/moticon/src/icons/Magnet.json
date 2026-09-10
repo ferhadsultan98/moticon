@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "magnet",
+    "magnetic",
+    "attract",
+    "pull",
+    "physics"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "pull",
+    "duration": 0.55,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

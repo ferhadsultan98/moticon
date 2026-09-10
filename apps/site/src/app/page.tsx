@@ -5,22 +5,26 @@ import { Features } from "@/components/Features";
 import { ShipIt } from "@/components/ShipIt";
 import { Footer } from "@/components/Footer";
 import { PlaygroundPreview } from "@/components/PlaygroundPreview";
-import { IconMarquee } from "@/components/IconMarquee";
-import { SupportSection } from "@/components/SupportSection";
+import { AgentSection } from "@/components/AgentSection";
+import { OpenSourceStrip } from "@/components/OpenSourceStrip";
 import { fetchStars } from "@/lib/github/stars";
 
 export default async function Home() {
   const stars = await fetchStars();
   return (
     <>
+      {/* understand */}
       <Hero />
-      <IconMarquee />
-      <PlaygroundPreview />
       <ProofSection />
+      {/* preview + discover */}
       <GridPreview />
-      <Features />
+      <PlaygroundPreview />
+      {/* install + use */}
       <ShipIt />
-      <SupportSection stars={stars} />
+      <Features />
+      {/* agents + return */}
+      <AgentSection />
+      <OpenSourceStrip stars={stars} />
       <Footer />
     </>
   );

@@ -10,6 +10,7 @@ export function BatteryFull({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -27,27 +28,26 @@ export function BatteryFull({
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M22 14v-4" />
         <rect x="2" y="6" width="16" height="12" rx="2" />
-        <motion.path
-          variants={{
-            rest: { opacity: 1 },
-            charge: { opacity: [0.3, 1], transition: { duration: 0.2, delay: 0 } },
-          }}
-          d="M6 10v4"
-        />
-        <motion.path
-          variants={{
-            rest: { opacity: 1 },
-            charge: { opacity: [0.3, 1], transition: { duration: 0.2, delay: 0.08 } },
-          }}
-          d="M10 10v4"
-        />
-        <motion.path
-          variants={{
-            rest: { opacity: 1 },
-            charge: { opacity: [0.3, 1], transition: { duration: 0.2, delay: 0.16 } },
-          }}
-          d="M14 10v4"
-        />
+
+        {[
+          { d: "M6 10v4", delay: 0 },
+          { d: "M10 10v4", delay: 0.08 },
+          { d: "M14 10v4", delay: 0.16 },
+        ].map(({ d, delay }) => (
+          <motion.path
+            key={d}
+            d={d}
+            style={{ transformOrigin: "50% 100%" }}
+            variants={{
+              rest: { scaleY: 1, opacity: 1 },
+              charge: {
+                scaleY: [0.15, 1.08, 1],
+                opacity: [0.25, 1, 1],
+                transition: { duration: 0.34, ease: "easeOut", delay, times: [0, 0.75, 1] },
+              },
+            }}
+          />
+        ))}
       </motion.g>
     </svg>
   );

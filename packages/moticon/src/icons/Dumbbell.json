@@ -1,0 +1,27 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "dumbbell",
+    "gym",
+    "weight",
+    "fitness",
+    "exercise"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [
+    "weight"
+  ],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "lift",
+    "duration": 0.9,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

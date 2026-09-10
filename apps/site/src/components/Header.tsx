@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Bell, Code, Menu, Search, Star, X } from "@moticon/react";
+import { Code, Menu, Search, Star, X } from "@moticon/react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { SEARCH_EVENT } from "@/components/SearchCommand";
+import { SEARCH_EVENT } from "@/lib/search-event";
 import { formatStars } from "@/lib/github/format-stars";
+import { trackEvent } from "@/lib/analytics";
 
 const REPO_URL = "https://github.com/ferhadsultan98/moticon";
 
@@ -34,8 +36,15 @@ export function Header({ stars }: { stars: number | null }) {
           className="flex items-center gap-2"
           onClick={() => setMobileOpen(false)}
         >
-          <Bell size={18} strokeWidth={1.75} className="text-accent" />
-          <span className="font-mono text-sm font-medium tracking-tight text-foreground">
+          <Image
+            src="/logo.png"
+            alt=""
+            width={1190}
+            height={807}
+            priority
+            className="h-[18px] w-auto"
+          />
+          <span className="font-mono text-[15px] font-semibold tracking-tight text-foreground">
             moticon
           </span>
         </Link>
@@ -82,7 +91,8 @@ export function Header({ stars }: { stars: number | null }) {
           <a
             href={REPO_URL}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("github_cta", { from: "header" })}
             aria-label={
               starsLabel
                 ? `moticon on GitHub, ${starsLabel} stars`
@@ -197,7 +207,8 @@ export function Header({ stars }: { stars: number | null }) {
             <a
               href={REPO_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("github_cta", { from: "mobile_menu" })}
               className="rounded-md px-3 py-2.5 text-muted transition-colors hover:bg-surface hover:text-foreground"
             >
               GitHub{starsLabel ? ` · ${starsLabel} stars` : ""}

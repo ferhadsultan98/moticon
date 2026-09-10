@@ -1,25 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { iconComponents, type IconMeta } from "@/lib/icons";
-import { Check, Copy } from "@moticon/react";
+import { iconComponents } from "@/lib/icon-components";
+import type { IconMeta } from "@/lib/icons";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
+import { CopyButton } from "@/components/CopyButton";
 
 export function IconCell({ meta }: { meta: IconMeta }) {
   const Icon = iconComponents[meta.name];
-  const [copied, setCopied] = useState(false);
   const isTap = meta.trigger === "tap";
 
   if (!Icon) return null;
 
-  function copyCode() {
-    navigator.clipboard.writeText(
-      `import { ${meta.name} } from "@moticon/react";\n\n<${meta.name} size={24} />`
-    );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1200);
-  }
+  const snippet = `import { ${meta.name} } from "@moticon/react";\n\n<${meta.name} size={24} />`;
 
   return (
     <article
@@ -55,14 +48,17 @@ export function IconCell({ meta }: { meta: IconMeta }) {
         >
           {meta.name}
         </Link>
-        <button
-          type="button"
-          onClick={copyCode}
-          aria-label={`Copy ${meta.name} code`}
-          className="shrink-0 text-muted opacity-100 transition-all hover:text-accent focus:opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
-        >
-          {copied ? <Check size={11} /> : <Copy size={11} />}
-        </button>
+        <CopyButton
+          value={snippet}
+          label=""
+          iconOnly
+          size={11}
+          ariaLabel={`Copy ${meta.name} import code`}
+          variant="inline"
+          event="icon_import_copied"
+          eventDetail={{ from: "icon_grid" }}
+          className="shrink-0 opacity-100 focus:opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
+        />
       </div>
     </article>
   );

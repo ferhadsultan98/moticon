@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "guitar",
+    "music",
+    "instrument",
+    "strum",
+    "strings"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "strum",
+    "duration": 0.45,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}
