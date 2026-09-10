@@ -1,0 +1,182 @@
+name: Release
+
+# Manual only. A maintainer runs this from the Actions tab after the version
+# bump (`npm run version-packages`) has been merged to main and CI is green.
+#
+#   1. Run once with dry-run = true  -> validate + pack, no publish.
+#   2. Run again with dry-run = false -> waits for the `npm-publish`
+#      environment approval, then publishes any package whose exact version
+#      isn't already on npm. npm generates provenance automatically because
+#      the publish goes through trusted publishing.
+#
+# Pull requests can never reach this workflow (workflow_dispatch only), and
+# only the `publish` job carries OIDC / the protected environment.
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Validate and pack without publishing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  # Always runs. No OIDC, no protected environment — this job only reads.
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          # No package-manager cache on release — build from a clean state.
+
+      - name: Toolchain versions
+        run: |
+          node --version
+          npm --version
+
+      - run: npm ci
+      - run: npm run build:packages
+      - run: npm run typecheck
+      - run: npm run size
+
+      - name: Pack
+        run: |
+          mkdir -p _packed
+          npm pack --workspace @moticon/react --pack-destination _packed
+          npm pack --workspace @moticon/mcp --pack-destination _packed
+          ls -la _packed
+
+      - name: Registry / version inspection
+        run: |
+          set -euo pipefail
+          for entry in "@moticon/react:packages/moticon" "@moticon/mcp:packages/mcp"; do
+            pkg="${entry%%:*}"; dir="${entry##*:}"
+            ver="$(node -p "require('./$dir/package.json').version")"
+            set +e
+            out="$(npm view "$pkg@$ver" version 2>&1)"; status=$?
+            set -e
+            if [ $status -eq 0 ] && [ "$out" = "$ver" ]; then
+              echo "$pkg@$ver — already on npm (would be skipped)"
+            elif echo "$out" | grep -q "E404\|404 Not Found\|is not in this registry"; then
+              echo "$pkg@$ver — NOT on npm (would be published)"
+            else
+              echo "Unexpected 'npm view' result for $pkg@$ver:" >&2
+              echo "$out" >&2
+              exit 1
+            fi
+          done
+
+  # Runs only for a real publish. Carries OIDC + the protected environment.
+  publish:
+    if: ${{ inputs.dry-run == false }}
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: npm-publish
+    permissions:
+      contents: read
+      id-token: write # OIDC — required for npm trusted publishing + provenance
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
+      # npm trusted publishing requires npm >= 11.5.1. Node 24 ships npm 11.x;
+      # pin a known-good 11.x so the release is deterministic.
+      - name: Pin npm
+        run: |
+          npm install -g npm@11.19.1
+          node --version
+          npm --version
+
+      - run: npm ci
+      - run: npm run build:packages
+      - run: npm run typecheck
+      - run: npm run size
+
+      - name: Publish (skip versions already on npm)
+        run: |
+          set -euo pipefail
+          echo "Publishing from commit ${GITHUB_SHA}"
+          : > published.txt   # packages actually published this run
+
+          publish_if_new () {
+            local pkg="$1" dir="$2" ver
+            ver="$(node -p "require('./$dir/package.json').version")"
+            echo "::group::$pkg@$ver"
+
+            local out status
+            set +e
+            out="$(npm view "$pkg@$ver" version 2>&1)"; status=$?
+            set -e
+
+            if [ $status -eq 0 ] && [ "$out" = "$ver" ]; then
+              echo "$pkg@$ver already published — skipping."
+            elif echo "$out" | grep -q "E404\|404 Not Found\|is not in this registry"; then
+              echo "Publishing $pkg@$ver (source ${GITHUB_SHA})"
+              npm publish --workspace "$pkg" --access public
+              echo "$pkg $dir $ver" >> published.txt
+            else
+              echo "Unexpected 'npm view' result for $pkg@$ver:" >&2
+              echo "$out" >&2
+              exit 1
+            fi
+            echo "::endgroup::"
+          }
+
+          publish_if_new "@moticon/react" "packages/moticon"
+          publish_if_new "@moticon/mcp" "packages/mcp"
+
+          echo "Published this run:"
+          cat published.txt || echo "  (nothing — all versions already on npm)"
+
+      # The `moticon` CLI is NOT published here. It has never been on npm, so no
+      # trusted publisher can be configured for it yet — it needs a one-time
+      # manual first publish (see docs/RELEASING.md), after which it can be
+      # added to publish_if_new above.
+
+      - name: Verify provenance (for packages published this run)
+        run: |
+          set -euo pipefail
+
+          if [ ! -s published.txt ]; then
+            echo "No package was published this run — nothing to verify."
+            exit 0
+          fi
+
+          fail=0
+          while read -r pkg dir ver; do
+            found=0
+            for attempt in 1 2 3 4 5; do
+              json="$(npm view "$pkg@$ver" --json 2>/dev/null || echo '{}')"
+              if node -e "
+                const j = JSON.parse(process.argv[1]);
+                process.exit(j.dist && j.dist.attestations ? 0 : 1);
+              " "$json"; then
+                echo "$pkg@$ver — provenance attestations present"
+                found=1
+                break
+              fi
+              echo "$pkg@$ver — attestations not visible yet (attempt $attempt/5)"
+              sleep 10
+            done
+            if [ "$found" -eq 0 ]; then
+              echo "$pkg@$ver — provenance attestations MISSING after 5 attempts" >&2
+              fail=1
+            fi
+          done < published.txt
+
+          exit "$fail"

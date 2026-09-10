@@ -1,0 +1,33 @@
+version: 2
+updates:
+  # One entry covers the whole npm workspaces monorepo from the root manifest.
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      # Batch routine dev-dependency bumps into one PR to cut noise.
+      dev-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    labels:
+      - dependencies
+    commit-message:
+      prefix: chore
+      include: scope
+
+  # Keep the GitHub Actions used by any future workflows current.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    labels:
+      - dependencies
+    commit-message:
+      prefix: chore

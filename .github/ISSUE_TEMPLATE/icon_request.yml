@@ -1,0 +1,55 @@
+name: Icon request
+description: Request a new animated icon.
+title: "[icon]: "
+labels: ["icon request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A moticon icon isn't just a shape — its animation models how the real
+        object moves. The physical-behaviour fields below are the important
+        part. "Just add a rocket" without a mechanic can't be actioned.
+  - type: input
+    id: name
+    attributes:
+      label: Requested icon
+      placeholder: "e.g. Rocket, Compass, Anchor"
+    validations:
+      required: true
+  - type: textarea
+    id: meaning
+    attributes:
+      label: What it represents
+      description: What would people use this icon for in a UI?
+      placeholder: "e.g. a 'launch' or 'deploy' action; a 'ship it' button"
+    validations:
+      required: true
+  - type: textarea
+    id: physical-behavior
+    attributes:
+      label: Expected physical behavior
+      description: >
+        How does the real object move? Which part moves, from what pivot, in
+        what direction? This is the animation spec.
+      placeholder: >
+        The rocket lifts up and slightly forward along its nose axis, with a
+        small tilt, then eases back to rest. The exhaust could puff briefly.
+    validations:
+      required: true
+  - type: dropdown
+    id: trigger
+    attributes:
+      label: Suggested trigger
+      options:
+        - hover
+        - tap
+        - either
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference / rationale
+      description: >
+        A link to the shape you have in mind (e.g. a Lucide icon), or why this
+        icon is worth adding. Visual references welcome.

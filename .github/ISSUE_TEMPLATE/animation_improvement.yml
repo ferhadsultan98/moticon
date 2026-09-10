@@ -1,0 +1,52 @@
+name: Animation improvement
+description: An existing icon's animation could better model its real motion.
+title: "[animation]: "
+labels: ["animation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        moticon's whole point is that each animation matches the physical
+        action. If one feels generic, off, or wrong, this is the place.
+  - type: input
+    id: icon
+    attributes:
+      label: Icon name
+      placeholder: "e.g. Download"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What does the animation do now?
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: >
+        Why doesn't it match the real motion? Too generic, wrong pivot, wrong
+        direction, too fast/slow, distracting, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: improved
+    attributes:
+      label: Expected improved mechanic
+      description: How should the object actually move?
+    validations:
+      required: true
+  - type: textarea
+    id: reduced-motion
+    attributes:
+      label: Reduced-motion / accessibility impact
+      description: >
+        Does your suggestion still communicate the icon's meaning when motion
+        is reduced? Anything to watch for?
+  - type: textarea
+    id: reference
+    attributes:
+      label: Visual reference (optional)
+      description: A recording or link showing the motion you have in mind.

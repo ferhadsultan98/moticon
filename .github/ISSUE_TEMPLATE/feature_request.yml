@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a capability, API, or tooling improvement (not a new icon).
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a **new icon**, use the "Icon request" template instead. For a
+        change to how an existing icon animates, use "Animation improvement".
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do that moticon makes hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like moticon to do? An API sketch helps.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you've tried, or other approaches.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
