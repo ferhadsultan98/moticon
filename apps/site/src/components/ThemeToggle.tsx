@@ -33,8 +33,12 @@ export function ThemeToggle() {
       title="Toggle color theme"
       className="relative flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface text-muted transition-colors hover:border-border-strong hover:text-foreground"
     >
-      <Sun size={17} strokeWidth={1.75} className="theme-icon-light" />
-      <Moon size={17} strokeWidth={1.75} className="theme-icon-dark" />
+      <span className="theme-icon-light pointer-events-none absolute inset-0 flex items-center justify-center">
+        <Sun size={17} strokeWidth={1.75} />
+      </span>
+      <span className="theme-icon-dark pointer-events-none absolute inset-0 flex items-center justify-center">
+        <Moon size={17} strokeWidth={1.75} />
+      </span>
     </button>
   );
 }

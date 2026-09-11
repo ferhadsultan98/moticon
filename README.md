@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  React &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; <a href="https://motion.dev">Motion</a> &nbsp;·&nbsp; tree-shakeable &nbsp;·&nbsp; Next.js App Router compatible &nbsp;·&nbsp; reduced-motion aware &nbsp;·&nbsp; MIT
+  React &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; Motion &nbsp;·&nbsp; tree-shakeable &nbsp;·&nbsp; Next.js App Router compatible &nbsp;·&nbsp; reduced-motion aware &nbsp;·&nbsp; MIT
 </p>
 
 <p align="center">
