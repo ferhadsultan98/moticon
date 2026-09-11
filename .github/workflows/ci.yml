@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Minimum permissions — CI only reads the repo.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Pinned to a full commit SHA (immutable); comment tracks the tag.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      # Build every workspace (packages + site). The package prebuild steps
+      # regenerate the barrel / registry / enhanced layer first.
+      - run: npm run build
+
+      - run: npm run typecheck
+
+      - run: npm run lint
+
+      - run: npm run size
+
+      # No test suite exists yet. When one is added, run it here.

@@ -10,6 +10,7 @@ export function Binoculars({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -36,11 +37,16 @@ export function Binoculars({
           d="M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z"
         />
         <path d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3" />
+
         <motion.path
-          style={{ originX: "12px", originY: "10px" }}
+          style={{ transformOrigin: "12px 10px" }}
           variants={{
-            rest: { scaleX: 1 },
-            focus: { scaleX: [1, 1.8, 1], transition: { duration: 0.5, ease: "easeInOut" } },
+            rest: { scaleX: 1, scaleY: 1 },
+            focus: {
+              scaleX: [1, 2.1, 1.6, 1.85, 1],
+              scaleY: [1, 0.7, 1.1, 0.95, 1],
+              transition: { duration: 0.6, ease: "easeInOut", times: [0, 0.32, 0.6, 0.82, 1] },
+            },
           }}
           d="M10 10h4"
         />

@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Bell } from "@moticon/react";
 
 function GenericBell() {
+  const reduced = useReducedMotion();
   return (
     <motion.svg
       width={56}
@@ -14,7 +15,7 @@ function GenericBell() {
       strokeWidth={1.75}
       strokeLinecap="round"
       strokeLinejoin="round"
-      whileHover={{ scale: 1.15, opacity: 0.6 }}
+      whileHover={reduced ? undefined : { scale: 1.15, opacity: 0.6 }}
       transition={{ duration: 0.2 }}
     >
       <path d="M6 8a6 6 0 0 1 12 0c0 4.5 1.5 6 2 7H4c.5-1 2-2.5 2-7Z" />

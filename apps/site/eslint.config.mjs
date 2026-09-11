@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated shadcn registry — template source for consumer projects, not
+    // part of this app's build.
+    "registry/**",
   ]),
 ]);
 

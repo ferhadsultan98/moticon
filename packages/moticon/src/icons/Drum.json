@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "drum",
+    "music",
+    "instrument",
+    "percussion",
+    "beat"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "hit",
+    "duration": 0.4,
+    "ease": "easeOut",
+    "stiffness": null
+  }
+}

@@ -10,6 +10,7 @@ export function Plug({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -31,10 +32,14 @@ export function Plug({
           d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"
         />
         <path d="M9 8V2" />
+
         <motion.path
           variants={{
             rest: { y: 0 },
-            plugin: { y: 2, transition: { duration: 0.3, ease: "easeOut" } },
+            plugin: {
+              y: [0, 2.4, 1.9, 2.1],
+              transition: { duration: 0.34, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+            },
           }}
           d="M12 22v-5"
         />

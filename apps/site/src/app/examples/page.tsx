@@ -5,8 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Examples",
-  description: "Practical interface patterns built with moticon animated icons.",
+  title: "Examples — animated icons in real UI",
+  description: "Practical React interface patterns built with moticon animated icons: notifications, toggles, uploads, players and more.",
+  alternates: { canonical: "/examples" },
 };
 
 export default function ExamplesPage() {

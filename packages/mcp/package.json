@@ -1,13 +1,13 @@
 {
   "name": "@moticon/mcp",
   "version": "0.1.2",
-  "description": "Model Context Protocol server for the moticon icon library — lets AI coding agents search the catalog and drop animated React icons straight into a project.",
+  "description": "Model Context Protocol server for moticon — lets AI coding agents (Claude Code, Cursor, and other MCP clients) search the animated-icon catalog and drop the right React icon into a project by intent.",
   "license": "MIT",
   "author": {
     "name": "Farhad Sultanov",
     "url": "https://www.linkedin.com/in/farhadsultan/"
   },
-  "homepage": "https://github.com/ferhadsultan98/moticon#readme",
+  "homepage": "https://moticon-web.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ferhadsultan98/moticon.git",
@@ -26,31 +26,48 @@
     "LICENSE"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
+    "build:data": "node scripts/build-icon-data.mjs",
+    "prebuild": "npm run build --workspace=@moticon/react && npm run build:data",
     "build": "tsup",
     "dev": "tsup --watch",
     "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"test/*.test.ts\"",
+    "prepublishOnly": "npm run prebuild && npm run typecheck && npm run build && npm run test"
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "model-context-protocol",
     "moticon",
     "icons",
+    "react-icons",
+    "animated-icons",
+    "icon-library",
     "ai-agent",
+    "ai-tools",
+    "coding-agents",
+    "developer-tools",
+    "claude",
     "claude-code",
-    "cursor"
+    "cursor",
+    "react",
+    "svg-icons",
+    "motion"
   ],
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "@moticon/react": "*",
-    "zod": "^4.0.0"
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.2.0"
   },
   "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@moticon/react": "^0.1.2",
     "@types/node": "^20",
     "tsup": "^8.3.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.0"
   },
   "publishConfig": {

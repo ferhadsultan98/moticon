@@ -4,8 +4,11 @@
   "private": true,
   "homepage": "https://moticon-web.vercel.app",
   "scripts": {
+    "generate": "node scripts/build-icon-details.mjs && node scripts/build-icon-metadata.mjs && npm run build:registry",
+    "build:registry": "node scripts/build-registry.mjs && shadcn build registry.json --output public/r",
+    "predev": "npm run generate",
     "dev": "next dev",
-    "prebuild": "npm run build --workspace=@moticon/react",
+    "prebuild": "npm run build --workspace=@moticon/react && npm run generate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -27,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
+    "shadcn": "4.21.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

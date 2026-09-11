@@ -3,8 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Playground } from "@/components/Playground";
 
 export const metadata: Metadata = {
-  title: "Playground",
-  description: "Customize and preview all 328 moticon animated React icons.",
+  title: "Playground — preview & configure every icon",
+  description: "Customize size, color and stroke, preview the animation, and copy the generated code for any moticon animated React icon.",
+  alternates: { canonical: "/playground" },
 };
 
 export default function PlaygroundPage() {

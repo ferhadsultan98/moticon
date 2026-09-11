@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "bomb",
+    "explosive",
+    "fuse",
+    "spark",
+    "danger"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "fizz",
+    "duration": 0.6,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

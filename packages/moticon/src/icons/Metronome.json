@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "metronome",
+    "tempo",
+    "music",
+    "beat",
+    "rhythm"
+  ],
+  "categories": [
+    "Media & Entertainment"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "tick",
+    "duration": 1,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

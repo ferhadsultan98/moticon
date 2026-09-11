@@ -10,6 +10,7 @@ export function LogIn({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,10 +27,14 @@ export function LogIn({
       <motion.g initial="rest" whileHover={reduced ? undefined : "enter"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+
         <motion.g
           variants={{
             rest: { x: 0 },
-            enter: { x: 3, transition: { duration: 0.25, ease: "easeOut" } },
+            enter: {
+              x: [0, 3.6, 2.9, 3.15],
+              transition: { duration: 0.34, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+            },
           }}
         >
           <path d="m10 17 5-5-5-5" />

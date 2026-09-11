@@ -10,6 +10,7 @@ export function SkipForward({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,10 +27,14 @@ export function SkipForward({
       <motion.g initial="rest" whileTap={reduced ? undefined : "skip"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M21 4v16" />
+
         <motion.path
           variants={{
             rest: { x: 0 },
-            skip: { x: 3, transition: { duration: 0.2, ease: "easeOut" } },
+            skip: {
+              x: [0, 3.6, 2.9, 3.15],
+              transition: { duration: 0.3, ease: "easeOut", times: [0, 0.6, 0.85, 1] },
+            },
           }}
           fill="transparent"
           d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"

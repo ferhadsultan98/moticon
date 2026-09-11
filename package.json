@@ -13,10 +13,20 @@
     "build": "npm run build --workspace=@moticon/react && npm run build --workspace=@moticon/mcp && npm run build --workspace=moticon-site",
     "build:pkg": "npm run build --workspace=@moticon/react",
     "build:mcp": "npm run build --workspace=@moticon/mcp",
+    "build:cli": "npm run build --workspace=moticon",
     "build:site": "npm run build --workspace=moticon-site",
+    "build:packages": "npm run build --workspace=@moticon/react && npm run build --workspace=@moticon/mcp",
     "dev": "npm run dev --workspace=moticon-site",
     "dev:pkg": "npm run dev --workspace=@moticon/react",
     "lint": "npm run lint --workspace=moticon-site",
-    "typecheck": "npm run typecheck --workspace=@moticon/react"
+    "typecheck": "npm run typecheck --workspace=@moticon/react && npm run typecheck --workspace=@moticon/mcp",
+    "size": "npm run size --workspace=@moticon/react",
+    "changeset": "changeset",
+    "version-packages": "changeset version && npm install --package-lock-only",
+    "release:check": "node scripts/release-check.mjs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.0",
+    "semver": "^7.6.0"
   }
 }

@@ -1,19 +1,21 @@
+import Link from "next/link";
+
 const features = [
   {
-    title: "Real mechanics",
-    body: "Each animation is modeled on how the real object moves — a pendulum, a drip, a fold. Not a generic scale/rotate tween.",
+    title: "Semantic motion",
+    body: "The animation is derived from the object, not a preset. A bell pivots and decays; a download drops and settles. The movement carries meaning.",
   },
   {
-    title: "Tree-shakeable",
-    body: "Import only the icons you use. Each is its own module — no monolithic sprite sheet or icon-font bundle.",
+    title: "Copy only what you use",
+    body: "sideEffects: false and one module per icon. Import three icons, bundle three icons — no sprite sheet, no icon font.",
   },
   {
-    title: "TypeScript-first",
-    body: "Every icon ships typed props: size, color, strokeWidth. Full IntelliSense, zero config.",
+    title: "Motion-aware accessibility",
+    body: "prefers-reduced-motion is respected automatically — the icon renders static, no configuration.",
   },
   {
-    title: "prefers-reduced-motion aware",
-    body: "Animations respect the user's motion preference automatically — no extra setup required.",
+    title: "Works with coding agents",
+    body: "An MCP server lets Claude Code, Cursor and other clients search the catalog by intent and add the component for you.",
   },
 ];
 
@@ -31,13 +33,23 @@ export function Features() {
         <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
           {features.map((f) => (
             <div key={f.title} className="bg-background p-5 sm:p-8">
-              <h3 className="mb-2 font-mono text-sm text-accent">
-                {f.title}
-              </h3>
-              <p className="text-sm text-muted">{f.body}</p>
+              <h3 className="mb-2 font-mono text-sm text-accent">{f.title}</h3>
+              <p className="text-sm leading-6 text-muted">{f.body}</p>
             </div>
           ))}
         </div>
+
+        <p className="mt-6 font-mono text-xs text-muted">
+          Typed props, built on <span className="text-foreground">Motion</span>,
+          Next.js App Router compatible, MIT licensed —{" "}
+          <Link
+            href="/docs"
+            className="text-foreground underline decoration-border-strong underline-offset-2 hover:decoration-accent"
+          >
+            see the docs
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ export function Tent({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -26,19 +27,26 @@ export function Tent({
       <motion.g initial="rest" whileHover={reduced ? undefined : "pitch"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="M2 21h20" />
+
         <motion.path
-          style={{ originX: "14px", originY: "3px" }}
+          style={{ transformOrigin: "14px 3px" }}
           variants={{
             rest: { rotate: 0 },
-            pitch: { rotate: -3, transition: { duration: 0.35, ease: "easeOut" } },
+            pitch: {
+              rotate: [0, -4.2, -2.5, -3.2],
+              transition: { duration: 0.42, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
           d="M3.5 21 14 3"
         />
         <motion.path
-          style={{ originX: "10px", originY: "3px" }}
+          style={{ transformOrigin: "10px 3px" }}
           variants={{
             rest: { rotate: 0 },
-            pitch: { rotate: 3, transition: { duration: 0.35, ease: "easeOut" } },
+            pitch: {
+              rotate: [0, 4.2, 2.5, 3.2],
+              transition: { duration: 0.42, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
           d="M20.5 21 10 3"
         />

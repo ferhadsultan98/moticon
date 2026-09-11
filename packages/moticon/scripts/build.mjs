@@ -4,7 +4,7 @@
  * esbuild has a persistent, version-independent bug on Linux CI (confirmed
  * on both Vercel and Netlify, across esbuild 0.28.2 and 0.25.9, with a
  * bare esbuild.build() call and no tsup in between): it throws "Cannot
- * read file src/icons/package.json" while resolving this package's 328
+ * read file src/icons/package.json" while resolving this package's icon
  * icon imports. Never reproduces on Windows. Root cause undetermined, but
  * consistent enough across versions that it's not a one-off regression —
  * so this build no longer uses esbuild at all. tsc compiles every source
@@ -78,7 +78,7 @@ run(
 
 // Flatten: package.json "exports" expects dist/index.js, dist/index.cjs,
 // dist/index.d.ts, dist/registry.js, dist/registry.cjs, dist/registry.d.ts
-// (plus .d.cts copies) — not a nested esm/cjs tree with 328 icon files
+// (plus .d.cts copies) — not nested esm/cjs trees with hundreds of icon files
 // inside. Since nothing outside this package imports icons directly by
 // path, only index/registry's own output needs to live at the top level;
 // their compiled `require("./icons/Bell")` calls still resolve correctly
@@ -94,12 +94,25 @@ for (const name of ["index", "registry"]) {
 // Icons themselves need to live alongside index.js/index.cjs so their
 // relative imports ("./icons/Bell") resolve at runtime.
 cpSync(join(esmDir, "icons"), join(distDir, "icons"), { recursive: true });
+cpSync(join(esmDir, "enhanced"), join(distDir, "enhanced"), { recursive: true });
 rmSync(join(distDir, "icons-cjs"), { recursive: true, force: true });
 cpSync(join(cjsDir, "icons"), join(distDir, "icons-cjs"), { recursive: true });
+rmSync(join(distDir, "enhanced-cjs"), { recursive: true, force: true });
+cpSync(join(cjsDir, "enhanced"), join(distDir, "enhanced-cjs"), { recursive: true });
 // The package root's package.json says "type": "module", so Node would
 // otherwise try to parse these CommonJS .js files as ESM. A directory-
 // scoped package.json marks just this subtree as CommonJS.
 cpSync(join(__dirname, "pkg-type-cjs.json"), join(distDir, "icons-cjs", "package.json"));
+cpSync(join(__dirname, "pkg-type-cjs.json"), join(distDir, "enhanced-cjs", "package.json"));
+
+// Enhanced CJS wrappers reference the retained original geometry tree.
+// Point those requires at the CJS copy rather than the ESM icon directory.
+for (const entry of readdirSync(join(distDir, "enhanced-cjs"), { withFileTypes: true })) {
+  if (!entry.isFile() || !entry.name.endsWith(".js")) continue;
+  const path = join(distDir, "enhanced-cjs", entry.name);
+  const content = readFileSync(path, "utf-8");
+  writeFileSync(path, content.replaceAll('require("../icons/', 'require("../icons-cjs/'));
+}
 
 // Rewrite dist/index.cjs and dist/registry.cjs's relative requires to
 // point at the CJS icon tree instead of the ESM one tsc would otherwise
@@ -107,7 +120,12 @@ cpSync(join(__dirname, "pkg-type-cjs.json"), join(distDir, "icons-cjs", "package
 for (const name of ["index", "registry"]) {
   const cjsPath = join(distDir, `${name}.cjs`);
   const content = readFileSync(cjsPath, "utf-8");
-  writeFileSync(cjsPath, content.replaceAll('require("./icons/', 'require("./icons-cjs/'));
+  writeFileSync(
+    cjsPath,
+    content
+      .replaceAll('require("./icons/', 'require("./icons-cjs/')
+      .replaceAll('require("./enhanced/', 'require("./enhanced-cjs/')
+  );
 }
 
 // Prepend "use client" to the component entry's outputs only — the
@@ -128,4 +146,4 @@ for (const file of ["icons"]) {
 rmSync(esmDir, { recursive: true, force: true });
 rmSync(cjsDir, { recursive: true, force: true });
 
-console.log(`Built dist/{index,registry}.{js,cjs,d.ts,d.cts} + dist/icons(-cjs)/`);
+console.log(`Built public enhanced API + retained geometry in dist/{enhanced,icons}(-cjs)/`);

@@ -10,6 +10,7 @@ export function AlertTriangle({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -24,12 +25,16 @@ export function AlertTriangle({
       {...props}
     >
       <motion.g
-        style={{ originX: "12px", originY: "21px" }}
+        style={{ transformOrigin: "12px 21px" }}
         initial="rest"
         whileHover={reduced ? undefined : "shake"}
         variants={{
-          rest: { rotate: 0 },
-          shake: { rotate: [0, -6, 6, -4, 4, 0], transition: { duration: 0.5, ease: "easeInOut" } },
+          rest: { rotate: 0, y: 0 },
+          shake: {
+            rotate: [0, -7, 8, -5.5, 3, -1.5, 0],
+            y: [0, -0.3, 0, 0, 0, 0, 0],
+            transition: { duration: 0.68, ease: "easeInOut", times: [0, 0.12, 0.3, 0.5, 0.68, 0.85, 1] },
+          },
         }}
       >
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />

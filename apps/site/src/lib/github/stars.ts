@@ -18,14 +18,18 @@ export const fetchStars = async (): Promise<number | null> => {
     });
 
     if (!res.ok) {
-      console.error(`[github] stars fetch failed: ${res.status}`);
+      // 403/429 = unauthenticated rate limit (common in local dev without a
+      // GITHUB_TOKEN). Not an app error — the UI just hides the star count.
+      if (res.status !== 403 && res.status !== 429) {
+        console.warn(`[github] stars fetch failed: ${res.status}`);
+      }
       return null;
     }
 
     const data = (await res.json()) as RepoResponse;
     return typeof data.stargazers_count === "number" ? data.stargazers_count : null;
   } catch (err) {
-    console.error("[github] stars fetch threw:", err);
+    console.warn("[github] stars fetch threw:", err);
     return null;
   }
 };

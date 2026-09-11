@@ -4,7 +4,8 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Changelog",
-  description: "New icons, improvements and releases from moticon.",
+  description: "New icons, improvements and releases from moticon — the animated React icon library.",
+  alternates: { canonical: "/changelog" },
 };
 
 const releases = [

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Browse the icons
+    url: https://moticon-web.vercel.app
+    about: The full catalog, live previews, and code for every icon.

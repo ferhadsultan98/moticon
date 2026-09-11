@@ -10,6 +10,7 @@ export function Bandage({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -27,11 +28,16 @@ export function Bandage({
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <rect x="2" y="6" width="20" height="12" rx="2" />
         <path d="M6 6v12" />
+
         <motion.path
-          style={{ originX: "18px", originY: "6px" }}
+          style={{ transformOrigin: "18px 6px" }}
           variants={{
-            rest: { rotate: 0 },
-            peel: { rotate: -8, transition: { duration: 0.4, ease: "easeOut" } },
+            rest: { rotate: 0, x: 0 },
+            peel: {
+              rotate: [0, -11, -8],
+              x: [0, -0.6, -0.3],
+              transition: { duration: 0.44, ease: "easeOut", times: [0, 0.7, 1] },
+            },
           }}
           d="M18 6v12"
         />

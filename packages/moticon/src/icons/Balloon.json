@@ -1,0 +1,25 @@
+{
+  "$schema": "../icon.schema.json",
+  "contributors": [
+    "ferhadsultan"
+  ],
+  "tags": [
+    "balloon",
+    "party",
+    "float",
+    "celebration",
+    "helium"
+  ],
+  "categories": [
+    "Objects & Tools"
+  ],
+  "aliases": [],
+  "deprecated": false,
+  "motion": {
+    "trigger": "hover",
+    "mechanic": "float",
+    "duration": 1.6,
+    "ease": "easeInOut",
+    "stiffness": null
+  }
+}

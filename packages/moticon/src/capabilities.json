@@ -1,0 +1,103 @@
+{
+  "$comment": "Capability manifest — the single source of truth for what each icon can do beyond its default hover/tap animation. Merged into registry.ts by scripts/build-registry.mjs. THREE states matter: true (verified capable), false (verified NOT capable), and absent (not yet audited). Never write false to mean 'unknown'. Keys are icon names (PascalCase, matching the .tsx/.json file). Only icons that differ from the defaults below need an entry.",
+  "$defaults": {
+    "stateful": false,
+    "controllable": true
+  },
+  "Bell": {
+    "stateful": true,
+    "states": ["idle", "active"]
+  },
+  "BellRing": {
+    "stateful": true,
+    "states": ["idle", "ringing"]
+  },
+  "Download": {
+    "stateful": true,
+    "states": ["idle", "loading", "success", "error"]
+  },
+  "Upload": {
+    "stateful": true,
+    "states": ["idle", "loading", "success", "error"]
+  },
+  "Play": {
+    "stateful": true,
+    "states": ["play", "pause"]
+  },
+  "Pause": {
+    "stateful": true,
+    "states": ["pause", "play"]
+  },
+  "Volume2": {
+    "stateful": true,
+    "states": ["on", "muted"]
+  },
+  "VolumeX": {
+    "stateful": true,
+    "states": ["muted", "on"]
+  },
+  "Wifi": {
+    "stateful": true,
+    "states": ["online", "offline"]
+  },
+  "WifiOff": {
+    "stateful": true,
+    "states": ["offline", "online"]
+  },
+  "Lock": {
+    "stateful": true,
+    "states": ["locked", "unlocked"]
+  },
+  "Unlock": {
+    "stateful": true,
+    "states": ["unlocked", "locked"]
+  },
+  "Battery": {
+    "stateful": true,
+    "states": ["idle", "charging", "full", "low"]
+  },
+  "Check": {
+    "stateful": true,
+    "states": ["idle", "checked"]
+  },
+  "Copy": {
+    "stateful": true,
+    "states": ["idle", "copied"]
+  },
+  "Heart": {
+    "stateful": true,
+    "states": ["idle", "liked"]
+  },
+  "Star": {
+    "stateful": true,
+    "states": ["idle", "starred"]
+  },
+  "Bookmark": {
+    "stateful": true,
+    "states": ["idle", "saved"]
+  },
+  "Menu": {
+    "stateful": true,
+    "states": ["menu", "close"]
+  },
+  "Sun": {
+    "stateful": true,
+    "states": ["sun", "moon"]
+  },
+  "Moon": {
+    "stateful": true,
+    "states": ["moon", "sun"]
+  },
+  "RefreshCw": {
+    "stateful": true,
+    "states": ["idle", "spinning", "done"]
+  },
+  "Loader": {
+    "stateful": true,
+    "states": ["idle", "spinning"]
+  },
+  "Search": {
+    "stateful": true,
+    "states": ["idle", "searching"]
+  }
+}

@@ -7,3 +7,5 @@ out/
 *.pem
 .env*
 .vercel
+.claude/
+*.tgz

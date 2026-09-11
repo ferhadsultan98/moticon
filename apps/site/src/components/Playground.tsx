@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Check, Copy, RefreshCw } from "@moticon/react";
-import { iconComponents, iconMeta } from "@/lib/icons";
+import { iconComponents } from "@/lib/icon-components";
+import { iconMeta } from "@/lib/icons";
 import { SelectMenu } from "@/components/SelectMenu";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -25,7 +26,7 @@ export function Playground() {
   const [size, setSize] = useState(112);
   const [strokeWidth, setStrokeWidth] = useState(2);
   const [color, setColor] = useState("#3dff9e");
-  const [background, setBackground] = useState("#0a0a0b");
+  const [background, setBackground] = useState("#ffffff");
   const [resetKey, setResetKey] = useState(0);
   const [copied, setCopied] = useState(false);
 

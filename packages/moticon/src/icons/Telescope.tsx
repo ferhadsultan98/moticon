@@ -10,6 +10,7 @@ export function Telescope({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -27,11 +28,15 @@ export function Telescope({
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
         <path d="m16 21-3.105-6.21" />
         <path d="m8 21 3.105-6.21" />
+
         <motion.g
-          style={{ originX: "12px", originY: "13px" }}
+          style={{ transformOrigin: "12px 13px" }}
           variants={{
             rest: { rotate: 0 },
-            aim: { rotate: -10, transition: { duration: 0.5, ease: "easeOut" } },
+            aim: {
+              rotate: [0, -13, -8.5, -10.5],
+              transition: { duration: 0.5, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
         >
           <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44" />

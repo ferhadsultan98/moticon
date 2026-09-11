@@ -1,56 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { Check, Copy } from "@moticon/react";
-import { iconComponents, iconMeta } from "@/lib/icons";
+import { useState } from "react";
+import { iconMeta } from "@/lib/icons";
 import { AutoAnimateIcon } from "@/components/AutoAnimateIcon";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SyntaxCode } from "@/components/SyntaxCode";
+import { CopyButton } from "@/components/CopyButton";
+import { humanizeName, pageHeading } from "@/lib/icon-copy";
+import { slugify } from "@/lib/site";
 
 export function IconDetail({ name }: { name: string }) {
   const meta = iconMeta.find((item) => item.name === name);
-  const Icon = iconComponents[name];
   const [size, setSize] = useState(96);
   const [strokeWidth, setStrokeWidth] = useState(2);
   const [color, setColor] = useState("#3dff9e");
   const [previewBackground, setPreviewBackground] = useState("#0a0a0b");
-  const [copied, setCopied] = useState<string | null>(null);
 
-  const related = useMemo(
-    () =>
-      meta
-        ? iconMeta
-            .filter(
-              (item) => item.mechanic === meta.mechanic && item.name !== name
-            )
-            .slice(0, 8)
-        : [],
-    [meta, name]
-  );
-
-  const sameCategory = useMemo(
-    () =>
-      meta
-        ? iconMeta
-            .filter(
-              (item) => item.category === meta.category && item.name !== name
-            )
-            .slice(0, 8)
-        : [],
-    [meta, name]
-  );
-
-  if (!meta || !Icon) return null;
+  if (!meta) return null;
 
   const importCode = `import { ${name} } from "@moticon/react";`;
   const jsxCode = `<${name} size={${size}} color="${color}" strokeWidth={${strokeWidth}} />`;
-
-  function copy(value: string, key: string) {
-    navigator.clipboard.writeText(value);
-    setCopied(key);
-    window.setTimeout(() => setCopied(null), 1200);
-  }
 
   return (
     <main className="mx-auto w-full min-w-0 max-w-6xl px-4 pb-12 pt-16 sm:px-6 sm:pb-16 sm:pt-20">
@@ -58,7 +28,7 @@ export function IconDetail({ name }: { name: string }) {
         items={[
           { label: "Home", href: "/" },
           { label: "Icons", href: "/icons" },
-          { label: meta.category, href: `/icons?category=${encodeURIComponent(meta.category)}` },
+          { label: meta.category, href: `/icons/category/${slugify(meta.category)}` },
           { label: name },
         ]}
       />
@@ -112,7 +82,7 @@ export function IconDetail({ name }: { name: string }) {
           <div className="mb-7">
             <div className="mb-3 flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-wider">
               <Link
-                href={`/icons?category=${encodeURIComponent(meta.category)}`}
+                href={`/icons/category/${slugify(meta.category)}`}
                 className="rounded-lg border border-border px-2.5 py-1 text-muted transition-colors hover:border-border-strong hover:text-foreground"
               >
                 {meta.category}
@@ -129,9 +99,13 @@ export function IconDetail({ name }: { name: string }) {
                 </span>
               )}
             </div>
-            <h1 className="break-words text-2xl font-medium tracking-tight sm:text-3xl">{name}</h1>
+            <h1 className="break-words text-2xl font-medium tracking-tight sm:text-3xl">
+              {pageHeading(meta)}
+            </h1>
             <p className="mt-2 text-sm leading-6 text-muted">
-              A {meta.mechanic} animation designed for {meta.trigger} interaction.
+              <code className="font-mono text-xs text-foreground">{`<${name} />`}</code>{" "}
+              — a {meta.mechanic} animation on {meta.trigger}, from the{" "}
+              {humanizeName(meta.category)} set.
             </p>
           </div>
 
@@ -177,14 +151,18 @@ export function IconDetail({ name }: { name: string }) {
 
           <div className="mt-7 space-y-2">
             <CopyButton
+              value={importCode}
               label="Copy import"
-              copied={copied === "import"}
-              onClick={() => copy(importCode, "import")}
+              variant="ghost"
+              event="icon_import_copied"
+              eventDetail={{ from: "icon_detail" }}
+              className="w-full justify-between"
             />
             <CopyButton
+              value={jsxCode}
               label="Copy JSX"
-              copied={copied === "jsx"}
-              onClick={() => copy(jsxCode, "jsx")}
+              variant="ghost"
+              className="w-full justify-between"
             />
           </div>
         </aside>
@@ -195,75 +173,20 @@ export function IconDetail({ name }: { name: string }) {
           <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
             Generated component
           </span>
-          <button
-            type="button"
-            onClick={() => copy(`${importCode}\n\n${jsxCode}`, "code")}
-            className="flex items-center gap-1.5 font-mono text-xs text-muted hover:text-accent"
-          >
-            {copied === "code" ? <Check size={13} /> : <Copy size={13} />}
-            {copied === "code" ? "Copied" : "Copy"}
-          </button>
+          <CopyButton
+            value={`${importCode}\n\n${jsxCode}`}
+            label="Copy"
+            event="icon_import_copied"
+            eventDetail={{ from: "icon_detail_code" }}
+          />
         </div>
         <pre className="custom-scrollbar max-w-full overflow-x-auto p-4 font-mono text-xs leading-6 sm:p-5 sm:text-sm sm:leading-7">
           <SyntaxCode code={`${importCode}\n\n${jsxCode}`} language="tsx" />
         </pre>
       </section>
 
-      {sameCategory.length > 0 && (
-        <section className="mt-14">
-          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-            same category
-          </p>
-          <h2 className="mb-6 text-2xl font-medium tracking-tight">
-            More {meta.category} icons
-          </h2>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-8">
-            {sameCategory.map((item) => {
-              const RelatedIcon = iconComponents[item.name];
-              return (
-                <Link
-                  key={item.name}
-                  href={`/icons/${item.name}`}
-                  className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-lg border border-border bg-surface p-3 text-muted transition-colors hover:border-border-strong hover:text-accent"
-                >
-                  <RelatedIcon size={28} />
-                  <span className="max-w-full truncate font-mono text-[10px]">
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {related.length > 0 && (
-        <section className="mt-14">
-          <p className="mb-2 font-mono text-xs uppercase tracking-widest text-accent">
-            same mechanic
-          </p>
-          <h2 className="mb-6 text-2xl font-medium tracking-tight">
-            More {meta.mechanic} icons
-          </h2>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-8">
-            {related.map((item) => {
-              const RelatedIcon = iconComponents[item.name];
-              return (
-                <Link
-                  key={item.name}
-                  href={`/icons/${item.name}`}
-                  className="flex min-h-28 flex-col items-center justify-center gap-3 rounded-lg border border-border bg-surface p-3 text-muted transition-colors hover:border-border-strong hover:text-accent"
-                >
-                  <RelatedIcon size={28} />
-                  <span className="max-w-full truncate font-mono text-[10px]">
-                    {item.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      {/* Related icons render server-side (RelatedIcons) below IconContent,
+          with deterministic ranking and no client bundle cost. */}
     </main>
   );
 }
@@ -288,23 +211,3 @@ function Control({
   );
 }
 
-function CopyButton({
-  label,
-  copied,
-  onClick,
-}: {
-  label: string;
-  copied: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="flex w-full items-center justify-between rounded-md border border-border bg-background px-3 py-2.5 font-mono text-xs text-muted transition-colors hover:border-border-strong hover:text-foreground"
-    >
-      {copied ? "Copied" : label}
-      {copied ? <Check size={14} /> : <Copy size={14} />}
-    </button>
-  );
-}

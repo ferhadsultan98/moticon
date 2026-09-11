@@ -10,6 +10,7 @@ export function Utensils({
   ...props
 }: MoticonIconProps) {
   const reduced = useReducedMotion();
+
   return (
     <svg
       width={size}
@@ -25,21 +26,31 @@ export function Utensils({
     >
       <motion.g initial="rest" whileHover={reduced ? undefined : "pickup"}>
         <rect x="0" y="0" width="24" height="24" fill="transparent" stroke="none" />
+
         <motion.g
-          style={{ originX: "7px", originY: "22px" }}
+          style={{ transformOrigin: "7px 22px" }}
           variants={{
-            rest: { rotate: 0 },
-            pickup: { rotate: -4, transition: { duration: 0.4, ease: "easeOut" } },
+            rest: { rotate: 0, y: 0 },
+            pickup: {
+              rotate: [0, -5.5, -3.5, -4.5],
+              y: [0, -0.5, -0.2, -0.35],
+              transition: { duration: 0.44, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
         >
           <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
           <path d="M7 2v20" />
         </motion.g>
+
         <motion.path
-          style={{ originX: "21px", originY: "22px" }}
+          style={{ transformOrigin: "21px 22px" }}
           variants={{
-            rest: { rotate: 0 },
-            pickup: { rotate: 4, transition: { duration: 0.4, ease: "easeOut" } },
+            rest: { rotate: 0, y: 0 },
+            pickup: {
+              rotate: [0, 5.5, 3.5, 4.5],
+              y: [0, -0.5, -0.2, -0.35],
+              transition: { duration: 0.44, ease: "easeOut", times: [0, 0.55, 0.8, 1] },
+            },
           }}
           d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"
         />
