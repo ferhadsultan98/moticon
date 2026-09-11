@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://moticon-web.vercel.app",
   "scripts": {
-    "generate": "node scripts/build-icon-details.mjs && npm run build:registry",
+    "generate": "node scripts/build-icon-details.mjs && node scripts/build-icon-metadata.mjs && npm run build:registry",
     "build:registry": "node scripts/build-registry.mjs && shadcn build registry.json --output public/r",
     "predev": "npm run generate",
     "dev": "next dev",
