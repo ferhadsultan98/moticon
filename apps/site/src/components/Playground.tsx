@@ -26,7 +26,7 @@ export function Playground() {
   const [size, setSize] = useState(112);
   const [strokeWidth, setStrokeWidth] = useState(2);
   const [color, setColor] = useState("#3dff9e");
-  const [background, setBackground] = useState("#0a0a0b");
+  const [background, setBackground] = useState("#ffffff");
   const [resetKey, setResetKey] = useState(0);
   const [copied, setCopied] = useState(false);
 
