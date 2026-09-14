@@ -26,7 +26,7 @@
     "release:check": "node scripts/release-check.mjs"
   },
   "devDependencies": {
-    "@changesets/cli": "^3.0.0",
+    "@changesets/cli": "^3.0.2",
     "semver": "^7.6.0"
   }
 }
