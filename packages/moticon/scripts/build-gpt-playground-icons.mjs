@@ -14,6 +14,7 @@ const custom = new Set([
   "Heart", "Bell", "Rocket", "Sparkles", "Download",
   "Eye", "EyeOff", "Fingerprint", "Gift", "GraduationCap",
   "Home", "Keyboard", "Lamp", "Menu",
+  "CreditCard", "DoorOpen", "Search",
   // Stateful pilot — hand-written controlled-morph components. The generator
   // must not overwrite these.
   "Play", "Volume2", "Sun", "Lock", "Check", "Wifi",

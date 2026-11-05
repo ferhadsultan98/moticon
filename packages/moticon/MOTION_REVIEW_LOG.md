@@ -20,6 +20,13 @@ This is the human-review ledger for the 343-icon enhanced set. An icon is marked
 
 `Home`, `Lamp`, and `Keyboard` received an additional small-size readability pass. Their semantic action was retained, while travel distance, active contrast, and reaction amplitude were increased so the mechanic remains obvious at 24 px rather than only at the 64 px review size. The entire first manual batch was also corrected to expose the same choreography through hover, tap, and forced playground replay.
 
+## Batch 02 — Motion System v2 Redesign
+| Icon | Individual mechanic | Dominant moving parts | Browser checks |
+| --- | --- | --- | --- |
+| CreditCard | contactless terminal tap & NFC emission | card tilt & tap, NFC wave radiation, confirmation check | isolated replay; 24/48/64 px |
+| DoorOpen | latch press & interior reveal | handle latch, perspective open leaf, interior light beam | isolated replay; 24/48/64 px |
+| Search | target scan & optical focus | scan trajectory, snap stop, lens optical bulge, reticle target | isolated replay; 24/48/64 px |
+
 ## Existing reference signatures
 
 `Heart`, `Bell`, `Rocket`, `Sparkles`, and `Download` remain the original hand-authored reference compositions. They stay in the signature set and will be rechecked alongside the appropriate later review batches.

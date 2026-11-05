@@ -1,6 +1,6 @@
 # Moticon Motion Design Standard
 
-This document is the quality gate for every new or revised Moticon icon. All 343 public icons pass through the enhanced layer. The fully hand-authored signature set currently contains `Heart`, `Bell`, `Rocket`, `Sparkles`, `Download`, `Eye`, `EyeOff`, `Fingerprint`, `Gift`, `GraduationCap`, `Home`, `Keyboard`, `Lamp`, and `Menu`. Every other icon preserves its own copied inner choreography and receives a source-directed reaction layer derived from its geometry and declared mechanic until it reaches its own manual review batch.
+This document is the quality gate for every new or revised Moticon icon. All 343 public icons pass through the enhanced layer. The fully hand-authored signature set currently contains `Heart`, `Bell`, `Rocket`, `Sparkles`, `Download`, `Eye`, `EyeOff`, `Fingerprint`, `Gift`, `GraduationCap`, `Home`, `Keyboard`, `Lamp`, `Menu`, `CreditCard`, `DoorOpen`, and `Search`. Every other icon preserves its own copied inner choreography and receives a source-directed reaction layer derived from its geometry and declared mechanic until it reaches its own manual review batch.
 
 ## 1. Motion must explain the object
 
